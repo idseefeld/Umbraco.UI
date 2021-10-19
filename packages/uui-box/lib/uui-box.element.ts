@@ -20,11 +20,11 @@ export class UUIBoxElement extends LitElement {
 
       ::slotted([slot='header']) {
         border-bottom: 1px solid var(--uui-interface-border);
+        padding: var(--uui-space-3) var(--uui-space-5);
       }
 
-      ::slotted([slot='header']),
       ::slotted([slot='main']) {
-        padding: var(--uui-size-space-3);
+        padding: var(--uui-space-5);
       }
     `,
   ];

@@ -16,7 +16,7 @@ export class UUIContentNodeCardElement extends UUICardElement {
         min-width: 250px;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--uui-size-space-3, 12px);
+        padding: var(--uui-space-3);
       }
 
       slot[name='tag'] {

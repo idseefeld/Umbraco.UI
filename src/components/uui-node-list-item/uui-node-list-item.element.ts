@@ -14,7 +14,7 @@ export class UUINodeListItemElement extends UUIBaseListItemElement {
     css`
       :host {
         min-width: 250px;
-        padding: calc(var(--uui-size-space-2) + 1px);
+        padding: var(--uui-space-2);
       }
 
       #open-part {
@@ -28,8 +28,8 @@ export class UUINodeListItemElement extends UUIBaseListItemElement {
 
       #icon {
         font-size: 1.2em;
-        margin-left: var(--uui-size-space-2);
-        margin-right: var(--uui-size-space-1);
+        margin-left: var(--uui-space-2);
+        margin-right: var(--uui-space-1);
       }
 
       #info {
@@ -38,7 +38,7 @@ export class UUINodeListItemElement extends UUIBaseListItemElement {
         align-items: start;
         justify-content: center;
         height: 100%;
-        padding-left: var(--uui-size-space-2);
+        padding-left: var(--uui-space-2);
       }
 
       #name {

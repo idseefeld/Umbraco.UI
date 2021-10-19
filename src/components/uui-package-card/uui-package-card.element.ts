@@ -84,7 +84,7 @@ export class UUIPackageCardElement extends UUICardElement {
 
       :host([type='node']) #card-content,
       :host([type='user']) #card-content {
-        padding: var(--uui-size-space-3, 12px);
+        padding: var(--uui-space-3);
       }
 
       :host([type='user']) #card-content {

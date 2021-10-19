@@ -16,7 +16,7 @@ export class UUIUserCardElement extends UUICardElement {
         min-width: 250px;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--uui-size-space-3, 12px);
+        padding: var(--uui-space-3);
         align-items: center;
       }
 
@@ -38,7 +38,7 @@ export class UUIUserCardElement extends UUICardElement {
       }
 
       #avatar {
-        margin: var(--uui-size-space-3, 12px);
+        margin: var(--uui-space-3);
       }
 
       slot[name='icon']::slotted(*) {
