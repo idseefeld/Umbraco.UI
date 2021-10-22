@@ -34,22 +34,24 @@ AAAOverview.parameters = {
 
 export const Testing: Story = () =>
   html`
-    <uui-editor style="height: 600px;">
-      <div slot="header" style="display: flex; align-items: center; justify-content: space-between;">
-
+    <uui-editor style="height: 600px; border: 1px solid">
+      <div slot="header" style="display: flex; align-items: center;">
         <uui-input label="Hello" hide-label style="flex: 1 1 auto;"></uui-input>
-
-        <uui-tab-group>
-          <uui-tab active>Tab 1</uui-tab>
-          <uui-tab>Tab 2</uui-tab>
-          <uui-tab>Tab 3</uui-tab>
-          <uui-tab>Tab 4</uui-tab>
-        </uui-tab-group>
-
       </div>
-      
-      <div slot="main">
 
+      <div slot="header-right">
+        <div
+          style="border-left: 1px solid grey; top: 0; right: 0; height: 100%">
+          <uui-tab-group style="--uui-tab-divider: grey; flex-wrap: nowrap;">
+            <uui-tab active>Tab 1</uui-tab>
+            <uui-tab>Tab 2</uui-tab>
+            <uui-tab>Tab 3</uui-tab>
+            <uui-tab>Tab 4</uui-tab>
+          </uui-tab-group>
+        </div>
+      </div>
+
+      <div slot="main">
         <!--
         <uui-tab-group>
           <uui-tab active>Tab 1</uui-tab>
@@ -58,6 +60,18 @@ export const Testing: Story = () =>
           <uui-tab>Tab 4</uui-tab>
         </uui-tab-group>
         -->
+
+        <uui-box style="margin-bottom: 20px;">
+          <div slot="header"><strong>Box 1</strong></div>
+          <div slot="main">
+            <div>
+              <uui-input label="Email"></uui-input>
+            </div>
+            <div>
+              <uui-input label="Language"></uui-input>
+            </div>
+          </div>
+        </uui-box>
 
         <uui-box style="margin-bottom: 20px;">
           <div slot="header"><strong>Box 1</strong></div>
@@ -83,9 +97,10 @@ export const Testing: Story = () =>
           </div>
         </uui-box>
       </div>
-      
-      <div slot="footer" style="display: flex; align-items: center; justify-content: space-between;">
 
+      <div
+        slot="footer"
+        style="display: flex; align-items: center; justify-content: space-between;">
         <uui-breadcrumbs>
           <uui-breadcrumb-item>List</uui-breadcrumb-item>
           <uui-breadcrumb-item>Item 1</uui-breadcrumb-item>

@@ -1,7 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import { query, property, state } from 'lit/decorators.js';
 import { UUIDropdownElement } from '../uui-dropdown/uui-dropdown.element';
-import { UUIOverflowContainer } from '../uui-overflow-container/uui-overflow-container.element';
+import { UUIOverflowContainer } from '@umbraco-ui/uui-overflow-container/lib/uui-overflow-container.element';
 import { UUISelectOptionElement } from '../uui-select-option/uui-select-option.element';
 import { UUISelectEvent } from './UUISelectEvent';
 import { UUISelectOptionEvent } from '../uui-select-option/UUISelectOptionEvent';
