@@ -24,12 +24,6 @@ export class UUIEditorElement extends LitElement {
         background-color: var(--uui-interface-surface);
         box-sizing: border-box;
       }
-      /* 
-      ::slotted([slot='header']) {
-        border-bottom: 1px solid var(--uui-interface-border);
-        flex: 0 0 auto;
-      }
-      */
 
       ::slotted([slot='footer']) {
         border-top: 1px solid var(--uui-interface-border);
@@ -45,25 +39,22 @@ export class UUIEditorElement extends LitElement {
       ::slotted([slot='header-right']) {
         margin: calc(var(--uui-space-4) * -1) calc(var(--uui-space-5) * -1);
         margin-left: var(--uui-space-5);
-        grid-column: 4;
         width: min-content;
       }
+
       ::slotted([slot='header-left']) {
         margin: calc(var(--uui-space-4) * -1) calc(var(--uui-space-5) * -1);
         margin-right: var(--uui-space-5);
-        grid-column: 1;
         width: min-content;
       }
+
       ::slotted([slot='header']) {
         width: 100%;
       }
 
       #header {
         border-bottom: 1px solid var(--uui-interface-border);
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: min-content;
-        grid-template-columns: auto auto auto auto;
+        display: flex;
       }
 
       #main {
@@ -75,9 +66,8 @@ export class UUIEditorElement extends LitElement {
   render() {
     return html`
       <div id="header">
-        <slot name="header"> </slot>
         <slot name="header-left"></slot>
-        <slot name="header-center"></slot>
+        <slot name="header"> </slot>
         <slot name="header-right"></slot>
       </div>
       <uui-overflow-container id="main">
