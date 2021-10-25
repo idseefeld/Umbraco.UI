@@ -345,8 +345,7 @@ export class UUISelectElement extends LitElement {
         placeholder="${this.placeholder}"
         @focus=${this.onInputFocus}
         @input=${this.onInputInput}
-        aria-label="${this.label}"
-      />
+        aria-label="${this.label}" />
     `;
   }
 
@@ -359,8 +358,7 @@ export class UUISelectElement extends LitElement {
         @click="${() => {
           this.open = !this.open;
         }}"
-        aria-label="${this.label}"
-      >
+        aria-label="${this.label}">
         ${this.selectedElement
           ? html`<span>${this.selectedElement.label}</span>`
           : html`<span id="placeholder">${this.placeholder}</span>`}
@@ -376,8 +374,7 @@ export class UUISelectElement extends LitElement {
         .parent=${this.selectedValueElement}
         .margin=${10}
         @change=${(e: UUIOverlayEvent) => (this.open = e.target.open)}
-        overlayPos="botRight"
-      >
+        overlayPos="botRight">
         ${this.input ? this.renderInput() : this.renderButton()}
         <uui-overflow-container
           slot="overlay"
