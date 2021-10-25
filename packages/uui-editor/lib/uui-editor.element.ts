@@ -39,13 +39,13 @@ export class UUIEditorElement extends LitElement {
       ::slotted([slot='header-right']) {
         margin: calc(var(--uui-space-4) * -1) calc(var(--uui-space-5) * -1);
         margin-left: var(--uui-space-5);
-        width: min-content;
+        /* width: min-content; */
       }
 
       ::slotted([slot='header-left']) {
         margin: calc(var(--uui-space-4) * -1) calc(var(--uui-space-5) * -1);
         margin-right: var(--uui-space-5);
-        width: min-content;
+        /* width: min-content; */
       }
 
       ::slotted([slot='header']) {

@@ -8,7 +8,7 @@ export default {
   id: 'uui-editor',
 };
 
-const Template: Story = () => html`
+export const AAAOverview: Story = () => html`
   <uui-editor>
     <div slot="header">Header</div>
     <div slot="main">Main</div>
@@ -16,33 +16,17 @@ const Template: Story = () => html`
   </uui-editor>
 `;
 
-export const AAAOverview = Template.bind({});
-AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-editor>
-  <div slot="header">Header</div>
-  <div slot="main">Main</div>
-  <div slot="footer">Footer</div>
-</uui-editor>
-      `,
-    },
-  },
-};
-
 export const HeaderAndTab: Story = () =>
   html`
-    <uui-editor style="height: 600px; border: 1px solid">
+    <uui-editor style="height: 600px; border: 1px solid #C4C4C4">
       <div slot="header" style="display: flex; align-items: center;">
         <p><b>Packages</b></p>
       </div>
 
       <div slot="header-right">
         <div
-          style="border-left: 1px solid grey; top: 0; right: 0; height: 100%">
-          <uui-tab-group style="--uui-tab-divider: grey; flex-wrap: nowrap;">
+          style="border-left: 1px solid #C4C4C4; top: 0; right: 0; height: 100%">
+          <uui-tab-group style="--uui-tab-divider: #C4C4C4; flex-wrap: nowrap;">
             <uui-tab active>Tab 1</uui-tab>
             <uui-tab>Tab 2</uui-tab>
             <uui-tab>Tab 3</uui-tab>
@@ -107,15 +91,15 @@ export const HeaderAndTab: Story = () =>
 
 export const TabsLeft: Story = () =>
   html`
-    <uui-editor style="height: 600px; border: 1px solid">
+    <uui-editor style="height: 600px; border: 1px solid #C4C4C4">
       <div slot="header" style="display: flex; align-items: center;">
         <uui-input label="Hello" hide-label style="flex: 1 1 auto;"></uui-input>
       </div>
 
       <div slot="header-left">
         <div
-          style="border-right: 1px solid grey; top: 0; right: 0; height: 100%">
-          <uui-tab-group style="--uui-tab-divider: grey; flex-wrap: nowrap;">
+          style="border-right: 1px solid #C4C4C4; top: 0; right: 0; height: 100%">
+          <uui-tab-group style="--uui-tab-divider: #C4C4C4; flex-wrap: nowrap;">
             <uui-tab active>Tab 1</uui-tab>
             <uui-tab>Tab 2</uui-tab>
             <uui-tab>Tab 3</uui-tab>
@@ -180,15 +164,15 @@ export const TabsLeft: Story = () =>
 
 export const TabsRight: Story = () =>
   html`
-    <uui-editor style="height: 600px; border: 1px solid">
+    <uui-editor style="height: 600px; border: 1px solid #C4C4C4">
       <div slot="header" style="display: flex; align-items: center;">
         <uui-input label="Hello" hide-label style="flex: 1 1 auto;"></uui-input>
       </div>
 
       <div slot="header-right">
         <div
-          style="border-left: 1px solid grey; top: 0; right: 0; height: 100%">
-          <uui-tab-group style="--uui-tab-divider: grey; flex-wrap: nowrap;">
+          style="border-left: 1px solid #C4C4C4; top: 0; right: 0; height: 100%">
+          <uui-tab-group style="--uui-tab-divider: #C4C4C4; flex-wrap: nowrap;">
             <uui-tab active>Tab 1</uui-tab>
             <uui-tab>Tab 2</uui-tab>
             <uui-tab>Tab 3</uui-tab>
@@ -253,15 +237,15 @@ export const TabsRight: Story = () =>
 
 export const TabsBoth: Story = () =>
   html`
-    <uui-editor style="height: 600px; border: 1px solid">
+    <uui-editor style="height: 600px; border: 1px solid #C4C4C4">
       <div slot="header" style="display: flex; align-items: center;">
         <uui-input label="Hello" hide-label style="flex: 1 1 auto;"></uui-input>
       </div>
 
       <div slot="header-left">
         <div
-          style="border-right: 1px solid grey; top: 0; right: 0; height: 100%">
-          <uui-tab-group style="--uui-tab-divider: grey; flex-wrap: nowrap;">
+          style="border-right: 1px solid #C4C4C4; top: 0; right: 0; height: 100%">
+          <uui-tab-group style="--uui-tab-divider: #C4C4C4; flex-wrap: nowrap;">
             <uui-tab active>Tab 1</uui-tab>
             <uui-tab>Tab 2</uui-tab>
             <uui-tab>Tab 3</uui-tab>
@@ -272,8 +256,8 @@ export const TabsBoth: Story = () =>
 
       <div slot="header-right">
         <div
-          style="border-left: 1px solid grey; top: 0; right: 0; height: 100%">
-          <uui-tab-group style="--uui-tab-divider: grey; flex-wrap: nowrap;">
+          style="border-left: 1px solid #C4C4C4; top: 0; right: 0; height: 100%">
+          <uui-tab-group style="--uui-tab-divider: #C4C4C4; flex-wrap: nowrap;">
             <uui-tab active>Tab 1</uui-tab>
             <uui-tab>Tab 2</uui-tab>
             <uui-tab>Tab 3</uui-tab>
