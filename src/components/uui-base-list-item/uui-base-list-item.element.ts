@@ -1,12 +1,13 @@
 import { LitElement, css } from 'lit';
-import { property } from 'lit/decorators';
-import { SelectableMixin } from '../../mixins/SelectableComponent';
+import { property } from 'lit/decorators.js';
+import { SelectableMixin } from '@umbraco-ui/uui-base/lib/mixins';
 import { UUIListItemEvent } from './UUIListItemEvent';
 
 /**
- *  @element uui-card
- *  @fires {UUICardEvent} click-title - fires when the media card title is clicked
- *  @description - Base card component to be extended by specific cards.
+ *  @element uui-base-list-item element.
+ *  @fires {UUIListItemEvent} selected - fires when the list item is selected
+ *  @fires {UUIListItemEvent} open
+ *  @description - Base list component to be extended by specific list item. Does not have a tag.
  */
 
 export class UUIBaseListItemElement extends SelectableMixin(LitElement) {

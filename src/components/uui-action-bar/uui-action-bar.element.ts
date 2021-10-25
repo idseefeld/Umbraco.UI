@@ -1,5 +1,10 @@
 import { css } from 'lit';
-import { UUIButtonGroupElement } from '../uui-button-group/uui-button-group.element';
+import { UUIButtonGroupElement } from '@umbraco-ui/uui-button-group/lib/uui-button-group.element';
+
+/**
+ *  @element uui-action-bar
+ *  @description - Extends button group to hold buttons with icons that represent actions.
+ */
 
 export class UUIActionBarElement extends UUIButtonGroupElement {
   static styles = [

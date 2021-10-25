@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit';
-import { query, property, state } from 'lit/decorators';
+import { query, property, state } from 'lit/decorators.js';
 import { UUIDropdownElement } from '../uui-dropdown/uui-dropdown.element';
 import { UUIOverflowContainer } from '../uui-overflow-container/uui-overflow-container.element';
 import { UUISelectOptionElement } from '../uui-select-option/uui-select-option.element';
@@ -91,6 +91,10 @@ export class UUISelectElement extends LitElement {
   ];
 
   // TODO: assign with form etc.
+  /**
+   * This is a static class field indicating that the element is can be used inside a native form and participate in its events. It may require a polyfill, check support here https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals.  Read more about form controls here https://web.dev/more-capable-form-controls/
+   * @type {boolean}
+   */
   static readonly formAssociated = true;
 
   connectedCallback() {
@@ -306,9 +310,8 @@ export class UUISelectElement extends LitElement {
           newSelection = this.getNextEnabledElement(index, index, move);
         }
       } else {
-        newSelection = this.listElements[
-          move > 0 ? 0 : this.listElements.length - 1
-        ];
+        newSelection =
+          this.listElements[move > 0 ? 0 : this.listElements.length - 1];
       }
       if (newSelection) {
         this.select(newSelection);
@@ -382,8 +385,7 @@ export class UUISelectElement extends LitElement {
           role="listbox"
           tabindex="${this.open ? '0' : '-1'}"
           aria-activedescendant="TODO"
-          @change=${this.onListElementChange}
-        >
+          @change=${this.onListElementChange}>
           <slot @slotchange=${this.onSlotChange}></slot>
         </uui-overflow-container>
       </uui-overlay>

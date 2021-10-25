@@ -1,7 +1,6 @@
-module.exports = (ctx) => ({
-  map: ctx.options.map,
+module.exports = () => ({
   plugins: {
-    "postcss-advanced-variables": {},
-    "postcss-color-function": {}
+    'postcss-advanced-variables': {},
+    'postcss-color-function': {},
   },
 });

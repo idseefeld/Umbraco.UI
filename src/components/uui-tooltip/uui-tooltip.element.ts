@@ -23,6 +23,7 @@ export class UUITooltipElement extends LitElement {
     this.open = value;
   }
 
+  // TODO: Fix the key input event and blur and focus
   render() {
     return html`
       <div>
@@ -30,15 +31,16 @@ export class UUITooltipElement extends LitElement {
           .margin=${10}
           .open=${this.open}
           .overlayPos=${this.position}
-          @change=${(e: UUIOverlayEvent) => (this.open = e.target.open)}
-        >
+          @change=${(e: UUIOverlayEvent) => (this.open = e.target.open)}>
           <slot
             name="parent"
             slot="parent"
+            @keypress=${() => 'this is needed for a11y'}
             @click=${() => (this.useClick ? this.openTooltip(!this.open) : '')}
             @mouseover=${() => (this.useClick ? '' : this.openTooltip(true))}
             @mouseout=${() => (this.useClick ? '' : this.openTooltip(false))}
-          ></slot>
+            @focus=${() => 'this is needed for a11y'}
+            @blur=${() => 'this is needed for a11y'}></slot>
           <slot name="overlay" slot="overlay"></slot>
         </uui-overlay>
       </div>

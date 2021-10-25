@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import { ArrayOfUmbracoWords } from '../../storybook/helper/UmbracoWordGenerator';
+import { ArrayOfUmbracoWords } from '../../helper/UmbracoWordGenerator';
 import './index';
 
 export default {

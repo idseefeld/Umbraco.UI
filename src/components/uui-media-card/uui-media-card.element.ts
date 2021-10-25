@@ -1,11 +1,12 @@
 import { css, html } from 'lit';
-import { property, state } from 'lit/decorators';
+import { property, state } from 'lit/decorators.js';
 import { UUICardElement } from '../uui-card/uui-card.element';
 
 /**
- *  @element uui-node-card
+ *  @element uui-media-card
  *  @fires {UUICardEvent} click-title - fires when the media card title is clicked
- *  @description - Card component for displaying a node.
+ *  @description - Card component for displaying a media item.
+ *  @slot - for image element
  */
 
 export class UUIMediaCardElement extends UUICardElement {
@@ -90,6 +91,7 @@ export class UUIMediaCardElement extends UUICardElement {
         .length > 0;
   }
 
+  // @ts-ignore TODO: fix typescript error
   protected renderMedia() {
     if (this.hasPreview === false) {
       if (this.fileExt === '') {
@@ -97,8 +99,7 @@ export class UUIMediaCardElement extends UUICardElement {
       } else {
         return html`<uui-file-symbol
           id="file-symbol"
-          type="txt"
-        ></uui-file-symbol>`;
+          type="txt"></uui-file-symbol>`;
       }
     }
   }
@@ -110,13 +111,11 @@ export class UUIMediaCardElement extends UUICardElement {
         id="open-part"
         tabindex="0"
         @click=${this.handleOpenClick}
-        @keydown=${this.handleOpenKeydown}
-      >
+        @keydown=${this.handleOpenKeydown}>
         <uui-icon
           id="info-icon"
           name="info"
-          style="color: currentColor"
-        ></uui-icon
+          style="color: currentColor"></uui-icon
         ><span> ${this.name} </span>
       </button>
       <!-- Select border must be right after .open-part -->

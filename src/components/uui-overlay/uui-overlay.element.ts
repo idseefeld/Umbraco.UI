@@ -154,7 +154,7 @@ export class UUIOverlayElement extends LitElement {
       return;
     }
 
-    const conRect = this.containerElement?.getBoundingClientRect()!;
+    const conRect = this.containerElement!.getBoundingClientRect()!;
     const parentRect = this.parent!.getBoundingClientRect()!;
 
     containerElement.style.top = '';

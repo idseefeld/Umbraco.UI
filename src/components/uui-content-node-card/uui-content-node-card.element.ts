@@ -1,5 +1,5 @@
 import { css, html } from 'lit';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 import { UUICardElement } from '../uui-card/uui-card.element';
 
 /**
@@ -70,8 +70,7 @@ export class UUIContentNodeCardElement extends UUICardElement {
         id="open-part"
         tabindex="0"
         @click=${this.handleOpenClick}
-        @keydown=${this.handleOpenKeydown}
-      >
+        @keydown=${this.handleOpenKeydown}>
         <uui-icon id="icon" name=${this.icon}></uui-icon>
         <span> ${this.name} </span>
       </div>

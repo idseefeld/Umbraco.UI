@@ -1,15 +1,17 @@
 import { LitElement, html, css } from 'lit';
-import { styleMap } from 'lit/directives/style-map';
-import { property, state } from 'lit/decorators';
+import { styleMap } from 'lit/directives/style-map.js';
+import { property, state } from 'lit/decorators.js';
 import {
   UUIBlinkKeyframes,
   UUIBlinkAnimationValue,
-} from '../../animations/uui-blink';
-import { LabelMixin } from '../../mixins/LabelMixin';
+} from '@umbraco-ui/uui-base/lib/animations';
+import { LabelMixin } from '@umbraco-ui/uui-base/lib/mixins';
 import { UUIInlineCreateButtonEvent } from './UUIInlineCreateButtonEvent';
 /**
  *  @element uui-inline-create-button
  *  @description - Special button for creating new elements
+ *  @attr {Boolean} vertical - display vertical version of the button
+ *  @fires click on user click
  */
 
 export class UUIInlineCreateButtonElement extends LabelMixin('', LitElement) {
@@ -168,22 +170,19 @@ export class UUIInlineCreateButtonElement extends LabelMixin('', LitElement) {
         id="button-wrapper"
         @mousemove=${this._onMouseMove}
         @click=${this._handleClick}
-      >
+        aria-label=${this.label ? this.label : 'create new element'}>
         <div
           id="plus"
           style=${styleMap({
             left: this.vertical ? '' : this.position + 'px',
             top: this.vertical ? this.position + 'px' : '',
-          })}
-        >
+          })}>
           <svg
             id="plus-icon"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-          >
+            viewBox="0 0 512 512">
             <path
-              d="M420.592 214.291H296.104V89.804h-83.102v124.487H88.518v83.104h124.484v124.488h83.102V297.395h124.488z"
-            />
+              d="M420.592 214.291H296.104V89.804h-83.102v124.487H88.518v83.104h124.484v124.488h83.102V297.395h124.488z" />
           </svg>
         </div>
       </button>

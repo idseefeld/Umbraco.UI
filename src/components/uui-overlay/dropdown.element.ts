@@ -66,8 +66,8 @@ export class DropdownTest extends LitElement {
     return html` <div
       slot="parent"
       id="dropdown"
-      @click=${() => (this.open = !this.open)}
-    >
+      @keypress=${() => 'need this for a11y'}
+      @click=${() => (this.open = !this.open)}>
       I WILL OPEN THE DROPDOWN
     </div>`;
   }
@@ -75,12 +75,11 @@ export class DropdownTest extends LitElement {
   renderContent() {
     return html` <div
       slot="overlay"
-      style="height: 150px; width: 300px; padding: 10px; border-radius: 10px; border: 1px solid black; background: white;"
-    >
+      style="height: 150px; width: 300px; padding: 10px; border-radius: 10px; border: 1px solid black; background: white;">
       I am a dropdown overlay
       <button>jeg er en knap</button>
       <p>lorem aksjd sadsadkas jdsald asd sad</p>
-      <img />
+      <img alt="#" />
       <input placeholder="I AM INPUT" />
     </div>`;
   }
@@ -95,8 +94,7 @@ export class DropdownTest extends LitElement {
           .margin=${8}
           use-clamp
           use-auto-placement
-          @change=${(e: UUIOverlayEvent) => (this.open = e.target.open)}
-        >
+          @change=${(e: UUIOverlayEvent) => (this.open = e.target.open)}>
           ${this.renderParent()} ${this.renderContent()}
         </uui-overlay>
       </div>

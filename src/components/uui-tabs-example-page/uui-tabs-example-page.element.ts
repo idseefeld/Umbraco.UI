@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { state } from 'lit/decorators';
+import { state } from 'lit/decorators.js';
 
 /**
  *  @element uui-tabs-example-page
@@ -21,24 +21,21 @@ export class UUITabsExamplePageElement extends LitElement {
           .active=${this.activeIndex === 0}
           @click=${() => {
             this.activeIndex = 0;
-          }}
-        >
+          }}>
           Tab A
         </uui-tab>
         <uui-tab
           .active=${this.activeIndex === 1}
           @click=${() => {
             this.activeIndex = 1;
-          }}
-        >
+          }}>
           Tab B
         </uui-tab>
         <uui-tab
           .active=${this.activeIndex === 2}
           @click=${() => {
             this.activeIndex = 2;
-          }}
-        >
+          }}>
           Tab C
         </uui-tab>
       </uui-tab-group>

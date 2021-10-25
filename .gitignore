@@ -17,7 +17,11 @@
 
 # build
 /_site/
-/dist/
+/packages/**/dist/
+/packages/**/lib/**/*.js
+/packages/**/lib/**/*.js.map
+/packages/**/lib/**/*.d.ts
+tsconfig.tsbuildinfo
 /out-tsc/
 
 
@@ -25,3 +29,4 @@ custom-elements.json
 storybook-static
 debug.log
 out-css
+*.log

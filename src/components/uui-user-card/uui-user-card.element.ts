@@ -1,5 +1,5 @@
 import { css, html } from 'lit';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 import { UUICardElement } from '../uui-card/uui-card.element';
 
 /**
@@ -73,13 +73,12 @@ export class UUIUserCardElement extends UUICardElement {
   public render() {
     return html`
       <slot name="tag"></slot>
-      <uui-avatar id="avatar" .text="${this.name}" size="m"></uui-avatar>
+      <uui-avatar id="avatar" title=${this.name} size="m"></uui-avatar>
       <div
         id="open-part"
         tabindex="0"
         @click=${this.handleOpenClick}
-        @keydown=${this.handleOpenKeydown}
-      >
+        @keydown=${this.handleOpenKeydown}>
         <span> ${this.name} </span>
       </div>
       <!-- Select border must be right after .open-part -->
@@ -88,32 +87,4 @@ export class UUIUserCardElement extends UUICardElement {
       <slot></slot>
     `;
   }
-
-  /*
-  // types: image, file
-  get mediaTemplate() {
-    return html`<slot name="asset"></slot>
-      <div
-        id="open-part"
-        tabindex="0"
-        @click=${this.handleOpenClick}
-        @keydown=${this.handleOpenKeydown}
-      >
-        <uui-icon
-          id="info-icon"
-          name="info"
-          style="color:currentColor"
-        ></uui-icon
-        ><span> ${this.title} </span>
-      </div>
-      <!-- Select border must be right after .open-part -->
-      <div id="select-border"></div>`;
-  }
-
-  // No type
-  get noTypeTemplate() {
-    return html`<slot></slot>`;
-  }
-
-  */
 }

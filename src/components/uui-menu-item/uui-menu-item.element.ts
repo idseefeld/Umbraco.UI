@@ -1,8 +1,10 @@
 import { LitElement, css, html } from 'lit';
-import { property } from 'lit/decorators';
-import { ActiveMixin } from '../../mixins/ActiveMixin';
-import { LabelMixin } from '../../mixins/LabelMixin';
-import { SelectableMixin } from '../../mixins/SelectableComponent';
+import { property } from 'lit/decorators.js';
+import {
+  ActiveMixin,
+  LabelMixin,
+  SelectableMixin,
+} from '@umbraco-ui/uui-base/lib/mixins';
 import { UUIMenuItemEvent } from './UUIMenuItemEvent';
 
 /**
@@ -178,8 +180,7 @@ export class UUIMenuItemElement extends SelectableMixin(
           id="label-button"
           @click=${this.onLabelClicked}
           ?disabled=${this.disabled}
-          aria-label="${this.label}"
-        >
+          aria-label="${this.label}">
           ${this.renderLabel()}
         </button>
         <div id="label-button-background"></div>
