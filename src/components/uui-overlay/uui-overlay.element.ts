@@ -48,7 +48,7 @@ export class UUIOverlayElement extends LitElement {
   @state() private _open = false;
   @state() private _overlayPos: OverlayPosition = 'botLeft';
   @state() private parent?: Element;
-  @state() private scrollParent: Element;
+  @state() private scrollParent!: Element;
 
   @property({ type: Boolean, attribute: 'use-clamp' }) useClamp = false;
   @property({ type: Boolean, attribute: 'use-auto-placement' })
@@ -184,7 +184,6 @@ export class UUIOverlayElement extends LitElement {
     if (!this.shadowRoot) {
       return;
     }
-    console.log('test');
 
     const containerElement = this.containerElement;
 
@@ -194,45 +193,52 @@ export class UUIOverlayElement extends LitElement {
 
     const conRect = this.containerElement!.getBoundingClientRect()!;
     const parentRect = this.parent!.getBoundingClientRect()!;
+    const scrollParentRect = this.scrollParent.getBoundingClientRect();
 
     containerElement.style.top = '';
     containerElement.style.bottom = '';
     containerElement.style.left = '';
     containerElement.style.right = '';
 
-    const result = this.calculateOverlayPlacement(conRect, parentRect);
+    const result = this.calculateOverlayPlacement(
+      conRect,
+      parentRect,
+      scrollParentRect
+    );
 
     containerElement.style.left = `${result.x}px`;
     containerElement.style.top = `${result.y}px`;
   }
 
-  updateOverlayPosition(rect: DOMRect) {
+  updateOverlayPosition(rect: DOMRect, scrollParentRect: DOMRect) {
     const sideSplit = this._overlayPos.split(/(?=[A-Z])/);
     const currentSide = sideSplit[0];
     const sideSuffix = sideSplit[1] || 'Center';
-    const viewportHeight = document.documentElement.clientHeight;
-    const viewportWidth = document.documentElement.clientWidth;
+    const viewportHeight = this.scrollParent.clientHeight;
+    const viewportWidth = this.scrollParent.clientWidth;
+
+    console.log(viewportHeight, viewportWidth);
 
     let flipSide = '';
 
     // add this to the calculation make sure that the position checks are not off by e.g: 0.1 pixel.
     const buffer = 2;
 
-    if (currentSide === 'top' && rect.y - buffer <= 0) {
+    if (currentSide === 'top' && rect.y - buffer <= scrollParentRect.y) {
       flipSide = 'bot';
     }
     if (
       currentSide === 'bot' &&
-      rect.y + rect.height + buffer >= viewportHeight
+      rect.y + rect.height + buffer >= viewportHeight + scrollParentRect.y
     ) {
       flipSide = 'top';
     }
-    if (currentSide === 'left' && rect.x - buffer <= 0) {
+    if (currentSide === 'left' && rect.x - buffer <= scrollParentRect.x) {
       flipSide = 'right';
     }
     if (
       currentSide === 'right' &&
-      rect.x + rect.width + buffer >= viewportWidth
+      rect.x + rect.width + buffer >= viewportWidth + scrollParentRect.x
     ) {
       flipSide = 'left';
     }
@@ -245,7 +251,8 @@ export class UUIOverlayElement extends LitElement {
 
   calculateOverlayPlacement(
     conRect: DOMRect,
-    parentRect: DOMRect
+    parentRect: DOMRect,
+    scrollParentRect: DOMRect
   ): { x: number; y: number } {
     if (parentRect != null && conRect != null) {
       const isTopHorizontal = this._overlayPos.indexOf('top') !== -1;
@@ -268,8 +275,8 @@ export class UUIOverlayElement extends LitElement {
       let marginY = 0;
 
       if (this.useAutoPlacement) {
-        const halfWindowX = window.innerWidth / 2;
-        const halfWindowY = window.innerHeight / 2;
+        const halfWindowX = this.scrollParent.clientWidth / 2;
+        const halfWindowY = this.scrollParent.clientHeight / 2;
 
         const dirX = this.mathClamp(
           this.mathMap(halfWindowX - parentRect.x, 0, parentRect.width, 0, 1),
@@ -293,7 +300,7 @@ export class UUIOverlayElement extends LitElement {
         marginX = this.margin;
         marginY = this.margin;
       } else {
-        this.updateOverlayPosition(conRect);
+        this.updateOverlayPosition(conRect, scrollParentRect);
         // -------- TOP / BOT --------
         if (isTopHorizontal) {
           alignY = 1;
@@ -369,12 +376,13 @@ export class UUIOverlayElement extends LitElement {
       if (this.useClamp && !this.useAutoPlacement) {
         // Only do this clamp if overlay is on the top or bottom of the parent.
         if (isTopHorizontal || isBotHorizontal) {
-          const leftClamp = -parentRect.x;
+          const leftClamp = -parentRect.x + scrollParentRect.x;
           const rightClamp =
-            document.documentElement.clientWidth -
+            this.scrollParent.clientWidth -
             parentRect.x -
             parentRect.width +
-            calcX -
+            calcX +
+            scrollParentRect.x -
             (conRect.width - parentRect.width) * (1 - originX);
 
           const clampX = this.mathClamp(calcX, leftClamp, rightClamp);
@@ -387,12 +395,13 @@ export class UUIOverlayElement extends LitElement {
 
         if (isLeftVertical || isRightVertical) {
           // Only do this clamp if overlay is on the sides of the parent.
-          const topClamp = -parentRect.y;
+          const topClamp = -parentRect.y + scrollParentRect.y;
           const bottomClamp =
-            document.documentElement.clientHeight -
+            this.scrollParent.clientHeight -
             parentRect.y -
             parentRect.height +
-            calcY -
+            calcY +
+            scrollParentRect.y -
             (conRect.height - parentRect.height) * (1 - originY);
 
           const clampY = this.mathClamp(calcY, topClamp, bottomClamp);
@@ -405,7 +414,7 @@ export class UUIOverlayElement extends LitElement {
       }
 
       // return the positions
-      return { x: clampXFinal, y: clampYFinal! };
+      return { x: clampXFinal, y: clampYFinal };
     } else {
       return { x: 0, y: 0 };
     }

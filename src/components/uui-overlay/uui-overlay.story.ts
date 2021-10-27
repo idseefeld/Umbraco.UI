@@ -103,12 +103,8 @@ export const ScrollContainer: Story = props => html`
         </span>
         <div
           slot="overlay"
-          style="padding: .5rem; border: 1px solid; border-radius: 4px; width: 200px">
+          style="padding: .5rem; border: 1px solid; border-radius: 4px; width: 100px; height: 100px">
           I am the dropdown container
-          <div
-            style="padding: 1rem; height: 100px; width: 100px; border: 1px solid">
-            more content
-          </div>
         </div>
       </uui-overlay>
     </div>
