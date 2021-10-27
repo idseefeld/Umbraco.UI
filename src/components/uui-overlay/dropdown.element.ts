@@ -1,4 +1,4 @@
-import { query, state } from 'lit/decorators';
+import { query, state } from 'lit/decorators.js';
 import { LitElement, html, css } from 'lit';
 import { OverlayPosition } from './uui-overlay.element';
 import { UUIOverlayEvent } from './UUIOverlayEvent';

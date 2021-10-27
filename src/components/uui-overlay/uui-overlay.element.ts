@@ -1,4 +1,4 @@
-import { property, query, state } from 'lit/decorators';
+import { property, query, state } from 'lit/decorators.js';
 import { LitElement, html, css } from 'lit';
 import { UUIOverlayEvent } from './UUIOverlayEvent';
 
@@ -37,17 +37,17 @@ export class UUIOverlayElement extends LitElement {
   ];
 
   // Cashed non-state variables //////////////////////////////
-  intersectionObserver?: IntersectionObserver;
-  documentClickEventHandler = this.onDocumentClick.bind(this);
-  scrollEventHandler = this.updateOverlay.bind(this);
-  scrollTimeout: any;
+  private intersectionObserver?: IntersectionObserver;
+  private documentClickEventHandler = this.onDocumentClick.bind(this);
+  private scrollEventHandler = this.updateOverlay.bind(this);
+  private scrollTimeout: any;
   ////////////////////////////////////////////////////////////
 
-  @query('#container') containerElement?: HTMLElement;
+  @query('#container') private containerElement?: HTMLElement;
 
-  @state() _open = false;
-  @state() _overlayPos: OverlayPosition = 'botLeft';
-  @state() parent?: Element;
+  @state() private _open = false;
+  @state() private _overlayPos: OverlayPosition = 'botLeft';
+  @state() private parent?: Element;
 
   @property({ type: Boolean, attribute: 'use-clamp' }) useClamp = false;
   @property({ type: Boolean, attribute: 'use-auto-placement' })
@@ -122,11 +122,17 @@ export class UUIOverlayElement extends LitElement {
     this.intersectionObserver.observe(this.containerElement as Element);
   }
 
-  intersectionCallback = (entries: IntersectionObserverEntry[]) => {
+  private intersectionCallback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach(element => {
+      console.log('A:SDJASLKJD', element);
       if (!element.isIntersecting) {
-        document.addEventListener('scroll', this.scrollEventHandler);
+        this.getScrollParent(this.shadowRoot!.host!, false).addEventListener(
+          'scroll',
+          this.scrollEventHandler
+        );
       } else {
+        console.log('WHAT');
+
         // only unsubscribe when the container has been inside the screen for x milliseconds
         clearTimeout(this.scrollTimeout);
         this.scrollTimeout = setTimeout(() => {
@@ -135,6 +141,28 @@ export class UUIOverlayElement extends LitElement {
       }
     });
   };
+
+  getScrollParent(element: Element, includeHidden: Boolean) {
+    let style = getComputedStyle(element);
+    const excludeStaticParent = style.position === 'absolute';
+    const overflowRegex = includeHidden
+      ? /(auto|scroll|hidden)/
+      : /(auto|scroll)/;
+
+    if (style.position === 'fixed') return document.body;
+    for (let parent = element; (parent = parent.parentElement as Element); ) {
+      style = getComputedStyle(parent);
+      if (excludeStaticParent && style.position === 'static') {
+        continue;
+      }
+      if (
+        overflowRegex.test(style.overflow + style.overflowY + style.overflowX)
+      )
+        return parent;
+    }
+
+    return document.body;
+  }
 
   // Close when clicking outside overlay
   onDocumentClick(event: Event) {
@@ -147,8 +175,9 @@ export class UUIOverlayElement extends LitElement {
     if (!this.shadowRoot) {
       return;
     }
+    console.log('test');
 
-    const containerElement = this.containerElement!;
+    const containerElement = this.containerElement;
 
     if (!containerElement) {
       return;
