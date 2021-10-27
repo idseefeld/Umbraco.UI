@@ -80,7 +80,7 @@ export class UUIOverlayElement extends LitElement {
   }
 
   disconnectedCallback() {
-    document.addEventListener('click', this.documentClickEventHandler);
+    document.addEventListener('mousedown', this.documentClickEventHandler);
     document.removeEventListener('scroll', this.scrollEventHandler);
     this.intersectionObserver?.disconnect();
   }
@@ -88,7 +88,7 @@ export class UUIOverlayElement extends LitElement {
   openOverlay() {
     if (this.containerElement) {
       this.containerElement!.style.opacity = '0';
-      document.addEventListener('click', this.documentClickEventHandler);
+      document.addEventListener('mousedown', this.documentClickEventHandler);
 
       setTimeout(() => {
         this.updateOverlay();
@@ -100,7 +100,7 @@ export class UUIOverlayElement extends LitElement {
 
   closeOverlay() {
     this.intersectionObserver?.disconnect();
-    document.removeEventListener('click', this.documentClickEventHandler);
+    document.removeEventListener('mousedown', this.documentClickEventHandler);
   }
 
   // Use this when changing the open state from within this component.
@@ -371,7 +371,7 @@ export class UUIOverlayElement extends LitElement {
       let clampXFinal = calcX;
       let clampYFinal = calcY;
 
-      // IF Useclamp and not using autoplacement
+      // IF useClamp and not using autoplacement
       // Clamps the overlay to the screen as long as parent is on screen
       if (this.useClamp && !this.useAutoPlacement) {
         // Only do this clamp if overlay is on the top or bottom of the parent.
