@@ -110,3 +110,28 @@ export const ScrollContainer: Story = props => html`
     </div>
   </div>
 `;
+export const ScrollBody: Story = props => html`
+  <div style="display: flex; min-height: 1000px; min-width: 1000px">
+    <uui-overlay
+      id="pop-out"
+      style="margin: auto"
+      .margin=${props.margin}
+      .overlayPos=${props.overlayPos}
+      .open=${props.open}
+      .useClamp=${props.useClamp}
+      .useAutoPlacement=${props.useAutoPlacement}>
+      <span
+        @click=${handleClick}
+        @keydown=${() => ''}
+        slot="parent"
+        style="padding: .5rem 1rem; border: 1px solid; display: inline-block; cursor: pointer; user-select: none; border-radius: 4px;">
+        I will open the dropdown
+      </span>
+      <div
+        slot="overlay"
+        style="padding: .5rem; border: 1px solid; border-radius: 4px; width: 100px; height: 100px">
+        I am the dropdown container
+      </div>
+    </uui-overlay>
+  </div>
+`;

@@ -41,6 +41,7 @@ export class UUIOverlayElement extends LitElement {
   private documentClickEventHandler = this.onDocumentClick.bind(this);
   private scrollEventHandler = this.updateOverlay.bind(this);
   private scrollTimeout: any;
+  private foundScrollParent = false;
   ////////////////////////////////////////////////////////////
 
   @query('#container') private containerElement!: HTMLElement;
@@ -76,7 +77,7 @@ export class UUIOverlayElement extends LitElement {
     const childNodes = slot!.assignedNodes({ flatten: true });
     this.parent = childNodes[0] as HTMLElement;
 
-    this.scrollParent = this.getScrollParent(this.containerElement);
+    this.scrollParent = this.getScrollParent(this.shadowRoot!.host);
   }
 
   disconnectedCallback() {
@@ -134,7 +135,6 @@ export class UUIOverlayElement extends LitElement {
       : /(auto|scroll)/;
 
     if (style.position === 'fixed') return document.body;
-    let newestParent = element;
     for (let parent = element; (parent = parent.parentElement as Element); ) {
       style = getComputedStyle(parent);
       if (excludeStaticParent && style.position === 'static') {
@@ -143,23 +143,27 @@ export class UUIOverlayElement extends LitElement {
       if (
         overflowRegex.test(style.overflow + style.overflowY + style.overflowX)
       ) {
+        this.foundScrollParent = true;
+
         return parent;
       }
 
-      newestParent = parent;
+      if (parent === document.body) {
+        return parent;
+      }
     }
 
-    if (newestParent !== document.body) {
-      return this.getScrollParent(this.shadowRoot!.host);
-    }
-
-    return document.body;
+    return this.getScrollParent(this.shadowRoot!.host);
   }
 
   private intersectionCallback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach(element => {
       if (!element.isIntersecting) {
-        this.scrollParent.addEventListener('scroll', this.scrollEventHandler);
+        if (this.foundScrollParent) {
+          this.scrollParent.addEventListener('scroll', this.scrollEventHandler);
+        } else {
+          document.addEventListener('scroll', this.scrollEventHandler);
+        }
       } else {
         // only unsubscribe when the container has been inside the screen for x milliseconds
         clearTimeout(this.scrollTimeout);
@@ -168,6 +172,7 @@ export class UUIOverlayElement extends LitElement {
             'scroll',
             this.scrollEventHandler
           );
+          document.removeEventListener('scroll', this.scrollEventHandler);
         }, 200);
       }
     });
@@ -214,31 +219,36 @@ export class UUIOverlayElement extends LitElement {
     const sideSplit = this._overlayPos.split(/(?=[A-Z])/);
     const currentSide = sideSplit[0];
     const sideSuffix = sideSplit[1] || 'Center';
-    const viewportHeight = this.scrollParent.clientHeight;
-    const viewportWidth = this.scrollParent.clientWidth;
+    const viewportHeight = this.foundScrollParent
+      ? this.scrollParent.clientHeight
+      : document.documentElement.clientHeight;
+    const viewportWidth = this.foundScrollParent
+      ? this.scrollParent.clientWidth
+      : document.documentElement.clientWidth;
 
-    console.log(viewportHeight, viewportWidth);
+    const scrollParentY = this.foundScrollParent ? scrollParentRect.y : 0;
+    const scrollParentX = this.foundScrollParent ? scrollParentRect.x : 0;
 
     let flipSide = '';
 
     // add this to the calculation make sure that the position checks are not off by e.g: 0.1 pixel.
     const buffer = 2;
 
-    if (currentSide === 'top' && rect.y - buffer <= scrollParentRect.y) {
+    if (currentSide === 'top' && rect.y - buffer <= scrollParentY) {
       flipSide = 'bot';
     }
     if (
       currentSide === 'bot' &&
-      rect.y + rect.height + buffer >= viewportHeight + scrollParentRect.y
+      rect.y + rect.height + buffer >= viewportHeight + scrollParentY
     ) {
       flipSide = 'top';
     }
-    if (currentSide === 'left' && rect.x - buffer <= scrollParentRect.x) {
+    if (currentSide === 'left' && rect.x - buffer <= scrollParentX) {
       flipSide = 'right';
     }
     if (
       currentSide === 'right' &&
-      rect.x + rect.width + buffer >= viewportWidth + scrollParentRect.x
+      rect.x + rect.width + buffer >= viewportWidth + scrollParentX
     ) {
       flipSide = 'left';
     }
@@ -371,18 +381,21 @@ export class UUIOverlayElement extends LitElement {
       let clampXFinal = calcX;
       let clampYFinal = calcY;
 
+      const scrollParentY = this.foundScrollParent ? scrollParentRect.y : 0;
+      const scrollParentX = this.foundScrollParent ? scrollParentRect.x : 0;
+
       // IF useClamp and not using autoplacement
       // Clamps the overlay to the screen as long as parent is on screen
       if (this.useClamp && !this.useAutoPlacement) {
         // Only do this clamp if overlay is on the top or bottom of the parent.
         if (isTopHorizontal || isBotHorizontal) {
-          const leftClamp = -parentRect.x + scrollParentRect.x;
+          const leftClamp = -parentRect.x + scrollParentX;
           const rightClamp =
             this.scrollParent.clientWidth -
             parentRect.x -
             parentRect.width +
             calcX +
-            scrollParentRect.x -
+            scrollParentX -
             (conRect.width - parentRect.width) * (1 - originX);
 
           const clampX = this.mathClamp(calcX, leftClamp, rightClamp);
@@ -395,13 +408,13 @@ export class UUIOverlayElement extends LitElement {
 
         if (isLeftVertical || isRightVertical) {
           // Only do this clamp if overlay is on the sides of the parent.
-          const topClamp = -parentRect.y + scrollParentRect.y;
+          const topClamp = -parentRect.y + scrollParentY;
           const bottomClamp =
             this.scrollParent.clientHeight -
             parentRect.y -
             parentRect.height +
             calcY +
-            scrollParentRect.y -
+            scrollParentY -
             (conRect.height - parentRect.height) * (1 - originY);
 
           const clampY = this.mathClamp(calcY, topClamp, bottomClamp);
