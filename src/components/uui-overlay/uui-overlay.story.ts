@@ -1,6 +1,7 @@
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import '.';
+import 'src/components/uui-dialog/index';
 
 export default {
   title: 'Misc/Overlay',
@@ -28,6 +29,7 @@ export default {
   args: {
     overlayPos: 'botLeft',
     margin: 8,
+    useClamp: true,
   },
 };
 
