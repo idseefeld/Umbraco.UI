@@ -134,8 +134,11 @@ export class UUIOverlayElement extends LitElement {
       ? /(auto|scroll|hidden)/
       : /(auto|scroll)/;
 
-    if (style.position === 'fixed') return document.body;
+    let newParent = element;
+
     for (let parent = element; (parent = parent.parentElement as Element); ) {
+      if (style.position === 'fixed') return document.body;
+      newParent = element;
       style = getComputedStyle(parent);
       if (excludeStaticParent && style.position === 'static') {
         continue;
@@ -144,16 +147,18 @@ export class UUIOverlayElement extends LitElement {
         overflowRegex.test(style.overflow + style.overflowY + style.overflowX)
       ) {
         this.foundScrollParent = true;
-
+        console.log('WHAT 2', parent);
         return parent;
       }
 
       if (parent === document.body) {
+        console.log('WHAT');
+
         return parent;
       }
     }
-
-    return this.getScrollParent(this.shadowRoot!.host);
+    // Recursive
+    // return this.getScrollParent(newParent.shadowRoot!.host);
   }
 
   private intersectionCallback = (entries: IntersectionObserverEntry[]) => {
