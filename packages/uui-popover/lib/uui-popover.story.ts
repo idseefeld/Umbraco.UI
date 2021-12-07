@@ -51,18 +51,18 @@ export default {
 //   return element;
 // };
 
-function handleClick(e: Event) {
+function handleClick(e: MouseEvent) {
   //@ts-ignore
   e.target.parentNode.open = !e.target.parentNode.open;
 }
 
 export const AAAOverview: Story = props => html`
   <div style="display: flex; height: 100%; width: 100%">
-    <uui-overlay
+    <uui-popover
       id="pop-out"
       style="margin: auto"
       .margin=${props.margin}
-      .overlayPos=${props.overlayPos}
+      .overlayPos=${props.overlayPos || 'botLeft'}
       .open=${props.open}
       .useClamp=${props.useClamp}
       .useAutoPlacement=${props.useAutoPlacement}>
@@ -82,7 +82,7 @@ export const AAAOverview: Story = props => html`
           more content
         </div>
       </div>
-    </uui-overlay>
+    </uui-popover>
   </div>
 `;
 
@@ -92,7 +92,7 @@ export const ScrollContainer: Story = props => html`
   <div
     style="display: flex; width: 500px; height: 500px; border: 1px solid; overflow: auto;">
     <div style="display: flex; min-height: 1000px; min-width: 1000px">
-      <uui-overlay
+      <uui-popover
         id="pop-out"
         style="margin: auto"
         .margin=${props.margin}
@@ -112,18 +112,18 @@ export const ScrollContainer: Story = props => html`
           style="padding: .5rem; border: 1px solid; border-radius: 4px; width: 100px; height: 100px">
           I am the dropdown container
         </div>
-      </uui-overlay>
+      </uui-popover>
     </div>
   </div>
 `;
 export const ScrollBody: Story = props => html`
   <div style="display: flex; min-height: 1000px; min-width: 1000px">
-    <uui-overlay
+    <uui-popover
       id="pop-out"
       style="margin: auto"
       .margin=${props.margin}
       .overlayPos=${props.overlayPos}
-      .open=${props.open}
+      ?open=${props.open}
       .useClamp=${props.useClamp}
       .useAutoPlacement=${props.useAutoPlacement}>
       <span
@@ -138,6 +138,6 @@ export const ScrollBody: Story = props => html`
         style="padding: .5rem; border: 1px solid; border-radius: 4px; width: 100px; height: 100px">
         I am the dropdown container
       </div>
-    </uui-overlay>
+    </uui-popover>
   </div>
 `;
