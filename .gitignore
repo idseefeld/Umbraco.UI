@@ -34,3 +34,6 @@ debug.log
 out-css
 *.log
 .eslintcache
+example.png
+document.asketch.json
+page.asketch.json
