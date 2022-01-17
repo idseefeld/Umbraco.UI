@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
-import { UUIIconRegistryEssentialElement } from './uui-icon-registry-essential.element';
-import '.';
+import { UUIIconRegistryEssentialElement } from '.';
+import './define';
 
 describe('UUIIconRegistryEssentialElement', () => {
   let element: UUIIconRegistryEssentialElement;

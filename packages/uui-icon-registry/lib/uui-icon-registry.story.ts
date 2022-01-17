@@ -39,7 +39,7 @@ CustomElement.parameters = {
     source: {
       language: 'js',
       code: `
-import { UUIIconRegistryElement } from '@umbraco-ui/uui-icon-registry/lib/uui-icon-registry.element';
+import { UUIIconRegistryElement } from '@umbraco-ui/uui-icon-registry/lib/';
 
 const icon = '<svg>..<svg>';
 

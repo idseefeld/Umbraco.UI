@@ -1,4 +1,4 @@
-import { UUIIconRegistry } from '@umbraco-ui/uui-icon-registry/lib/UUIIconRegistry';
+import { UUIIconRegistry } from '@umbraco-ui/uui-icon-registry/lib/index';
 import {
   iconAdd,
   iconAlert,
@@ -33,6 +33,7 @@ import {
   iconWand,
   iconWrong,
 } from './svgs';
+// TODO: try to use .svgs
 
 export class UUIIconRegistryEssential extends UUIIconRegistry {
   constructor() {

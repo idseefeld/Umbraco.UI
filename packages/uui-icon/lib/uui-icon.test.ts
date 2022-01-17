@@ -6,10 +6,10 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUIIconElement } from './uui-icon.element';
-import '.';
+import './define';
 import { UUIIconRequestEvent } from './UUIIconRequestEvent';
-import '@umbraco-ui/uui-icon-registry/lib/index';
-import { UUIIconRegistryElement } from '@umbraco-ui/uui-icon-registry/lib/uui-icon-registry.element';
+import '@umbraco-ui/uui-icon-registry/lib/define';
+import { UUIIconRegistryElement } from '@umbraco-ui/uui-icon-registry/lib/index';
 import { LitElement } from 'lit';
 
 const TEST_SVG =

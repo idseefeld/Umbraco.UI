@@ -1,4 +1,4 @@
-import { UUIIconRegistryElement } from '@umbraco-ui/uui-icon-registry/lib/uui-icon-registry.element';
+import { UUIIconRegistryElement } from '@umbraco-ui/uui-icon-registry/lib';
 import { UUIIconRegistryEssential } from './UUIIconRegistryEssential';
 
 /**

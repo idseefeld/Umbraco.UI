@@ -20,6 +20,7 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-icon.min.js",
+  "types": "./dist/index.d.ts",
   "module": "./lib/index.js",
   "customElements": "custom-elements.json",
   "files": [

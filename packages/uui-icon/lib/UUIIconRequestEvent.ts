@@ -1,4 +1,4 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base/lib/index';
 
 export class UUIIconRequestEvent extends UUIEvent<{ iconName: string }> {
   public static readonly ICON_REQUEST = 'icon_request';
