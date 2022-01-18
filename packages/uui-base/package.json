@@ -19,9 +19,13 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-base.min.js",
+  "types": "./lib/index.d.ts",
+  "type": "module",
+  "module": "./lib/index.js",
   "files": [
     "dist",
     "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
     "lib/**/*.js"
   ],
   "dependencies": {
