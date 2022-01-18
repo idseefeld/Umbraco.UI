@@ -20,12 +20,14 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-icon.min.js",
-  "types": "./dist/index.d.ts",
+  "types": "./lib/index.d.ts",
+  "type": "module",
   "module": "./lib/index.js",
   "customElements": "custom-elements.json",
   "files": [
     "dist",
     "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
     "lib/**/*.js",
     "custom-elements.json"
   ],
