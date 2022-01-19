@@ -33,7 +33,7 @@ export default {
 
 const Template: Story = props => html` <div
   style="position:relative; width:80px; height:80px; border: 2px dashed black;">
-  <uui-badge .look=${props.look} ?attention=${props.attention}
+  <uui-badge look=${props.look} ?attention=${props.attention}
     >${props.slot}</uui-badge
   >
 </div>`;
@@ -48,11 +48,7 @@ AAAOverview.storyName = 'Overview';
 AAAOverview.parameters = {
   docs: {
     source: {
-      code: `
-<div style="position:relative;">
-  <uui-badge>1</uui-badge>
-</div>
-    `,
+      type: 'dynamic',
     },
   },
 };
@@ -107,15 +103,16 @@ OnButton.parameters = {
 };
 
 export const Looks: Story = props => html`
-  ${InterfaceLookNames.map(
-    (lookName: InterfaceLookType) =>
-      html`<div
-        style="position:relative; display:inline-block; width:10px; height:10px; margin-right: 16px;">
-        <uui-badge .look=${lookName} ?attention=${props.attention}
-          >${props.slot}</uui-badge
-        >
-      </div>`
-  )}
+  <div style="display: flex; gap: 8px;">
+    ${InterfaceLookNames.map(
+      (lookName: InterfaceLookType) => html` <uui-badge
+        look=${lookName}
+        ?attention=${props.attention}
+        style="position: relative"
+        >${props.slot}</uui-badge
+      >`
+    )}
+  </div>
 `;
 Looks.args = {
   look: 'primary',
