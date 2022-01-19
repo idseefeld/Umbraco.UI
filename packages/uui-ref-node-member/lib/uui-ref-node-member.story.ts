@@ -31,21 +31,6 @@ AAAOverview.args = {
   groupName: 'Visitor, Registered-Member',
 };
 AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-ref-node-member
-  name="Arnold Vitz"
-  group-name="Visitor, Registered-Member">
-  <uui-action-bar slot="actions">
-    <uui-button label="Remove">Remove</uui-button>
-  </uui-action-bar>
-</uui-ref-node-member>
-    `,
-    },
-  },
-};
 
 export const CustomIcon: Story = () => html`
   <div style="max-width: 420px;">

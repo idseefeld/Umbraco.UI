@@ -34,23 +34,6 @@ AAAOverview.args = {
   author: 'Umbraco HQ',
 };
 AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-ref-node-package
-  name="Umbraco Starter Kit"
-  version="1.1"
-  author="Umbraco HQ">
-  <uui-tag size="s" slot="tag" look="positive">Update Available</uui-tag>
-  <uui-action-bar slot="actions"
-    ><uui-button><uui-icon name="delete"></uui-icon></uui-button
-  ></uui-action-bar>
-</uui-ref-node-package>
-    `,
-    },
-  },
-};
 
 export const CustomIcon: Story = () => html`
   <div style="max-width: 420px;">

@@ -31,21 +31,6 @@ AAAOverview.args = {
   alias: 'Umbraco.TextField',
 };
 AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-ref-node-data-type
-  name="TextField"
-  alias="Umbraco.TextField">
-  <uui-action-bar slot="actions">
-    <uui-button label="Remove">Remove</uui-button>
-  </uui-action-bar>
-</uui-ref-node-data-type>
-    `,
-    },
-  },
-};
 
 export const CustomIcon: Story = () => html`
   <div style="max-width: 420px;">

@@ -30,21 +30,6 @@ AAAOverview.args = {
   detail: 'Accept and signup for newsletter',
 };
 AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-ref-node-form
-  name="Newsletter Signup"
-  alias="Signup for newsletter">
-  <uui-action-bar slot="actions">
-    <uui-button label="Remove">Remove</uui-button>
-  </uui-action-bar>
-</uui-ref-node-form>
-    `,
-    },
-  },
-};
 
 export const CustomIcon: Story = () => html`
   <div style="max-width: 420px;">
