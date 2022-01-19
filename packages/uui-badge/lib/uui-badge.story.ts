@@ -65,15 +65,6 @@ WithText.args = {
   look: 'positive',
   slot: 'Published',
 };
-WithText.parameters = {
-  docs: {
-    source: {
-      code: `
-  <uui-badge look="positive">Published</uui-badge>
-    `,
-    },
-  },
-};
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
@@ -83,23 +74,11 @@ WithIcon.args = {
 
 export const OnButton: Story = props => html` <uui-button look="outline">
   Button label
-  <uui-badge .look=${props.look}>${props.slot}</uui-badge>
+  <uui-badge look=${props.look}>${props.slot}</uui-badge>
 </uui-button>`;
 OnButton.args = {
   look: 'danger',
   slot: '!',
-};
-OnButton.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-button look="outline">
-  <uui-badge look="positive">!</uui-badge>
-  Button label
-</uui-button>
-    `,
-    },
-  },
 };
 
 export const Looks: Story = props => html`
