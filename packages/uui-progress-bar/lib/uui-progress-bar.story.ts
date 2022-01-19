@@ -9,13 +9,6 @@ export default {
   args: {
     progress: 25,
   },
-  parameters: {
-    docs: {
-      source: {
-        code: `<uui-progress-bar></uui-progress-bar>`,
-      },
-    },
-  },
 };
 
 export const Overview: Story = props =>
