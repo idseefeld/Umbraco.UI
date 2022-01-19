@@ -32,22 +32,6 @@ AAAOverview.args = {
   detail: 'path/to/nowhere',
 };
 AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `
-<uui-ref-node
-  name="Rabbit Suit Product Page"
-  detail="path/to/nowhere">
-  <uui-tag size="s" slot="tag" look="positive">Published</uui-tag>
-  <uui-action-bar slot="actions"
-    ><uui-button><uui-icon name="delete"></uui-icon></uui-button
-  ></uui-action-bar>
-</uui-ref-node>
-    `,
-    },
-  },
-};
 
 export const CustomIcon: Story = () => html`
   <div style="max-width: 420px;">
