@@ -6,14 +6,7 @@ export default {
   id: 'uui-caret',
   title: 'Symbols/Caret',
   component: 'uui-caret',
-  parameters: {
-    docs: {
-      source: {
-        code: `<uui-caret></uui-caret>`,
-      },
-    },
-  },
 };
 
 export const Overview: Story = props =>
-  html` <uui-caret .open=${props.open}></uui-caret>`;
+  html` <uui-caret ?open=${props.open}></uui-caret>`;
