@@ -52,6 +52,13 @@ AAAOverview.parameters = {
     },
   },
 };
+AAAOverview.parameters = {
+  docs: {
+    source: {
+      type: 'dynamic',
+    },
+  },
+};
 
 export const CustomIcon: Story = props => html`
   <div style="width: 300px">
