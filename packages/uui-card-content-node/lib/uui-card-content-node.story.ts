@@ -43,22 +43,6 @@ export const AAAOverview: Story = props =>
     </div>
   `;
 AAAOverview.storyName = 'Overview';
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      code: `<uui-card-content-node name="The card">
-      <!-- Missing proper layout component for the details -->
-    </uui-card-content-node>`,
-    },
-  },
-};
-AAAOverview.parameters = {
-  docs: {
-    source: {
-      type: 'dynamic',
-    },
-  },
-};
 
 export const CustomIcon: Story = props => html`
   <div style="width: 300px">
