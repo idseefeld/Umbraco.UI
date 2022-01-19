@@ -20,11 +20,6 @@ export default {
     controls: {
       exclude: ['change'],
     },
-    docs: {
-      source: {
-        code: `<uui-checkbox label="Checkbox"></uui-checkbox>`,
-      },
-    },
   },
 };
 
@@ -32,11 +27,11 @@ export const AAAOverview: Story = props =>
   html`
     <uui-checkbox
       style="--uui-checkbox-size: ${props['--uui-checkbox-size']}"
-      .value=${props.value}
-      .name=${props.name}
-      .error=${props.error}
-      .label=${props.label}
-      .labelPosition=${props.labelPosition}
+      value=${props.value}
+      name=${props.name}
+      ?error=${props.error}
+      label=${props.label}
+      label-Position=${props.labelPosition}
       ?disabled=${props.disabled}
       ?checked=${props.checked}
       >${props.slot}</uui-checkbox
