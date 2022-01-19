@@ -101,7 +101,7 @@ SlottedContent.parameters = {
   controls: { include: ['slot', 'overflow'] },
   docs: {
     source: {
-      code: `<uui-avatar overflow title="overflow title">overflow content</uui-avatar>`,
+      code: `<uui-avatar overflow title="overflow"></uui-avatar>`,
     },
   },
 };
@@ -127,10 +127,22 @@ InlineWithText.parameters = {
 
 // TODO: Uncomment when we get the bagde element added to packages
 export const WidthBadge = Template.bind({});
-WidthBadge.args = { slot: html`<uui-badge>!</uui-badge>`, overflow: true };
+WidthBadge.args = {
+  slot: html`<uui-badge>!</uui-badge>`,
+  overflow: true,
+  title: 'Hello World',
+};
 WidthBadge.argTypes = {
   slot: { table: { category: 'slots' }, control: { type: 'text' } },
 };
 WidthBadge.parameters = {
   controls: { include: ['slot', 'overflow', 'title'] },
+};
+
+WidthBadge.parameters = {
+  docs: {
+    source: {
+      code: `<uui-avatar overflow title="Hello World"><uui-badge>!</uui-badge></uui-avatar>`,
+    },
+  },
 };

@@ -59,17 +59,44 @@ WithAttention.args = {
   slot: '!',
   attention: true,
 };
+WithAttention.parameters = {
+  docs: {
+    source: {
+      code: `
+      <uui-badge look="danger" attention><uui-icon name="info"></uui-icon></uui-badge>
+      `,
+    },
+  },
+};
 
 export const WithText = Template.bind({});
 WithText.args = {
   look: 'positive',
   slot: 'Published',
 };
+WithText.parameters = {
+  docs: {
+    source: {
+      code: `
+      <uui-badge look="positive">Published</uui-badge>
+      `,
+    },
+  },
+};
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   look: 'positive',
   slot: html`<uui-icon name="info"></uui-icon>`,
+};
+WithIcon.parameters = {
+  docs: {
+    source: {
+      code: `
+      <uui-badge look="positive"><uui-icon name="info"></uui-icon></uui-badge>
+      `,
+    },
+  },
 };
 
 export const OnButton: Story = props => html` <uui-button look="outline">
@@ -79,6 +106,18 @@ export const OnButton: Story = props => html` <uui-button look="outline">
 OnButton.args = {
   look: 'danger',
   slot: '!',
+};
+OnButton.parameters = {
+  docs: {
+    source: {
+      code: `
+      <uui-button look="outline">
+      Button label
+      <uui-badge look="danger"></uui-badge>
+      </uui-button>
+      `,
+    },
+  },
 };
 
 export const Looks: Story = props => html`
@@ -96,4 +135,19 @@ export const Looks: Story = props => html`
 Looks.args = {
   look: 'primary',
   slot: '!',
+};
+Looks.parameters = {
+  docs: {
+    source: {
+      code: `
+      <uui-badge look="primary">!</uui-badge>
+      <uui-badge look="secondary">!</uui-badge>
+      <uui-badge look="outline">!</uui-badge>
+      <uui-badge look="placeholder">!</uui-badge>
+      <uui-badge look="positive">!</uui-badge>
+      <uui-badge look="warning">!</uui-badge>
+      <uui-badge look="danger">!</uui-badge>
+      `,
+    },
+  },
 };
