@@ -28,11 +28,11 @@ const avatarSrcSet = [
   `${avatarSrc}&h=300&w=300`,
 ];
 
-const Template: Story = (props: any) => html`<uui-avatar
-  .overflow=${props.overflow}
-  .imgSrc=${props.imgSrc}
-  .imgSrcset=${props.imgSrcset}
-  .title=${props.title}
+const Template: Story = props => html`<uui-avatar
+  ?overflow=${props.overflow}
+  img-src=${props.imgSrc}
+  img-srcset=${props.imgSrcset}
+  title=${props.title}
   style="font-size: ${props.fontSize}px; background-color: ${props.backgroundColor}; color: ${props.color}"
   >${props.slot}</uui-avatar
 >`;
@@ -48,7 +48,7 @@ AAAOverview.argTypes = {
 AAAOverview.parameters = {
   docs: {
     source: {
-      code: `<uui-avatar title="Firstname Lastname"></uui-avatar>`,
+      type: 'dynamic',
     },
   },
 };
@@ -126,11 +126,11 @@ InlineWithText.parameters = {
 };
 
 // TODO: Uncomment when we get the bagde element added to packages
-// export const WidthBadge = Template.bind({});
-// WidthBadge.args = { slot: html`<uui-badge>!</uui-badge>`, overflow: true };
-// WidthBadge.argTypes = {
-//   slot: { table: { category: 'slots' }, control: { type: 'text' } },
-// };
-// WidthBadge.parameters = {
-//   controls: { include: ['slot', 'overflow', 'title'] },
-// };
+export const WidthBadge = Template.bind({});
+WidthBadge.args = { slot: html`<uui-badge>!</uui-badge>`, overflow: true };
+WidthBadge.argTypes = {
+  slot: { table: { category: 'slots' }, control: { type: 'text' } },
+};
+WidthBadge.parameters = {
+  controls: { include: ['slot', 'overflow', 'title'] },
+};
