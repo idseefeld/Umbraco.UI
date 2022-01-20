@@ -1,7 +1,7 @@
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
 import '@umbraco-ui/uui-box/lib/index';
-import '@umbraco-ui/uui-button/lib/index';
+import '@umbraco-ui/uui-button/lib/define';
 import '@umbraco-ui/uui-input/lib/index';
 
 export default {

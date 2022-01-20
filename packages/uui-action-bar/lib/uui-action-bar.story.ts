@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 import '@umbraco-ui/uui-action-bar/lib/index';
-import '@umbraco-ui/uui-button/lib/index';
+import '@umbraco-ui/uui-button/lib/define';
 import '@umbraco-ui/uui-icon/lib/index';
 import {
   InterfaceLookNames,

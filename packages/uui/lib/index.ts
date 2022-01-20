@@ -4,7 +4,7 @@ import '@umbraco-ui/uui-avatar-group/lib/index';
 import '@umbraco-ui/uui-badge/lib/index';
 import '@umbraco-ui/uui-box/lib/index';
 import '@umbraco-ui/uui-breadcrumbs/lib/index';
-import '@umbraco-ui/uui-button/lib/index';
+import '@umbraco-ui/uui-button/lib/define';
 import '@umbraco-ui/uui-button-group/lib/index';
 import '@umbraco-ui/uui-button-inline-create/lib/index';
 // import '@umbraco-ui/uui-card/lib/index'; // TODO: We need to solve exports

@@ -5,7 +5,7 @@ import '@umbraco-ui/uui-table/lib/index';
 import '@umbraco-ui/uui-box/lib/index';
 import '@umbraco-ui/uui-tag/lib/index';
 import '@umbraco-ui/uui-avatar/lib/index';
-import '@umbraco-ui/uui-button/lib/index';
+import '@umbraco-ui/uui-button/lib/define';
 import '@umbraco-ui/uui-progress-bar/lib/index';
 import '@umbraco-ui/uui-icon/lib/index';
 import { UUITextStyles } from '@umbraco-ui/uui-css/lib/uui-text.styles';

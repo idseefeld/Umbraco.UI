@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-button/lib/index';
+import './define';
 import '@umbraco-ui/uui-icon/lib/index';
 import '@umbraco-ui/uui-badge/lib/index';
 
@@ -81,8 +81,8 @@ const Template: Story = props => {
     <uui-button
       type=${props.type}
       style=${cssProps
-        .map(cssProp => (props[cssProp] ? `${cssProp}: ${props[cssProp]}` : ''))
-        .reduce(reducer)}
+      .map(cssProp => (props[cssProp] ? `${cssProp}: ${props[cssProp]}` : ''))
+      .reduce(reducer)}
       ?disabled=${props.disabled}
       ?compact=${props.compact}
       look=${props.look}
@@ -119,8 +119,8 @@ export const WithBadge: Story = props => {
     <uui-button
       type=${props.type}
       style=${cssProps
-        .map(cssProp => (props[cssProp] ? `${cssProp}: ${props[cssProp]}` : ''))
-        .reduce(reducer)}
+      .map(cssProp => (props[cssProp] ? `${cssProp}: ${props[cssProp]}` : ''))
+      .reduce(reducer)}
       ?disabled=${props.disabled}
       ?compact=${props.compact}
       look=${props.look}
@@ -217,8 +217,8 @@ export const Looks: Story = props => html`
   >
   <h5>Looks</h5>
   ${InterfaceLookNames.map(
-    (lookName: InterfaceLookType) =>
-      html`<uui-button
+  (lookName: InterfaceLookType) =>
+    html`<uui-button
         type=${props.type}
         .look=${lookName}
         state=${props.state}
@@ -227,7 +227,7 @@ export const Looks: Story = props => html`
         style="margin-right:12px;">
         ${uppercaseFirstLetter(lookName)} look
       </uui-button>`
-  )}
+)}
 `;
 Looks.args = { label: 'Button' };
 Looks.parameters = {
