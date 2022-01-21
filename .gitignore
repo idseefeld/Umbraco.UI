@@ -35,4 +35,4 @@ out-css
 *.log
 .eslintcache
 *.tgz
-*d.ts.map
+*.d.ts.map
