@@ -55,13 +55,13 @@ const createCSSFilesConfig = (cssFiles = []) => {
   ];
 };
 
-const createBundleConfig = (bundle, namespace) => {
+const createBundleConfig = (bundle, namespace, test) => {
   const packageJson = readPackageJson('./');
   const bundleName = packageJson.name.replace('@umbraco-ui/', '');
 
   return bundle
     ? {
-        input: `lib/${bundle}.ts`,
+        input: test ? bundle : `lib/${bundle}.ts`,
         output: {
           file: `./dist/${bundleName}.min.js`,
           format: 'umd',
@@ -84,9 +84,10 @@ export const UUIProdConfig = ({
   cssFiles = [],
   bundle,
   namespace = '',
+  test = false,
 }) => {
   const cssFilesConfig = createCSSFilesConfig(cssFiles);
   const esModulesConfig = createEsModulesConfig(entryPoints);
-  const bundleConfig = createBundleConfig(bundle, namespace);
+  const bundleConfig = createBundleConfig(bundle, namespace, test);
   return [...cssFilesConfig, ...esModulesConfig, bundleConfig].filter(x => x);
 };
