@@ -1,5 +1,5 @@
 import '@umbraco-ui/uui-action-bar/define';
-import '@umbraco-ui/uui-avatar-group/lib';
+import '@umbraco-ui/uui-avatar-group/define';
 import '@umbraco-ui/uui-avatar/define';
 import '@umbraco-ui/uui-badge/lib';
 import '@umbraco-ui/uui-box/lib';
