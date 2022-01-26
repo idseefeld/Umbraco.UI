@@ -1,8 +1,9 @@
+import '../define';
+import '@umbraco-ui/uui-button/define';
+import '@umbraco-ui/uui-input/define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-box/lib/index';
-import '@umbraco-ui/uui-button/define';
-import '@umbraco-ui/uui-input/lib/index';
 
 export default {
   title: 'Layout/Box',

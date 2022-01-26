@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUICaretElement } from './uui-caret.element';
-import '.';
+import '../define';
 
 describe('UUICaretElement', () => {
   let element: UUICaretElement;

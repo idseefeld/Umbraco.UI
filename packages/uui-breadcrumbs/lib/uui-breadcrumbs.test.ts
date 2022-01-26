@@ -1,7 +1,7 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIBreadcrumbItemElement } from './uui-breadcrumb-item.element';
 import { UUIBreadcrumbsElement } from './uui-breadcrumbs.element';
-import '.';
+import '../define';
 
 describe('UuiBreadcrumbs', () => {
   let element: UUIBreadcrumbsElement;

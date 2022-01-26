@@ -1,6 +1,6 @@
+import { UUIRefElement } from '@umbraco-ui/uui-ref';
 import { css, html } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { UUIRefElement } from '@umbraco-ui/uui-ref/lib/uui-ref.element';
 
 /**
  *  @element uui-ref-node
@@ -131,8 +131,8 @@ export class UUIRefNodeElement extends UUIRefElement {
         <span id="icon">
           <slot name="icon" @slotchange=${this._onSlotIconChange}></slot>
           ${this._iconSlotHasContent === false
-            ? this._renderFallbackIcon()
-            : ''}
+        ? this._renderFallbackIcon()
+        : ''}
         </span>
         <div id="info">
           <div id="name">${this.name}</div>

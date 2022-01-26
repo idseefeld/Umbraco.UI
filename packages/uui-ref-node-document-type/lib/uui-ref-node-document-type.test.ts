@@ -6,7 +6,7 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUIRefNodeDocumentTypeElement } from './uui-ref-node-document-type.element';
-import '.';
+import '../define';
 
 describe('UUIRefNodeDocumentTypeElement', () => {
   let element: UUIRefNodeDocumentTypeElement;

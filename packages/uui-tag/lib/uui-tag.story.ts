@@ -1,4 +1,4 @@
-import '@umbraco-ui/uui-tag/lib';
+import '../define';
 
 import { Story } from '@storybook/web-components';
 import { InterfaceLookNames } from '@umbraco-ui/uui-base';
@@ -45,8 +45,8 @@ AAAOverview.parameters = {
 export const Looks: Story = () =>
   html`
     ${InterfaceLookNames.map(
-      look => html`<uui-tag look="${look}">${look}</uui-tag><br />`
-    )}
+    look => html`<uui-tag look="${look}">${look}</uui-tag><br />`
+  )}
   `;
 
 Looks.parameters = {

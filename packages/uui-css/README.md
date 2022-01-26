@@ -17,5 +17,5 @@ npm i @umbraco-ui/uui-css
 ## Usage
 
 ```html
-<style src="@umbraco-ui/uui-css/root.css"></style>
+<style src="@umbraco-ui/uui-css/uui-root.css"></style>
 ```

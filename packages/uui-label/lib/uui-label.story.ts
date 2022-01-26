@@ -1,8 +1,9 @@
+import '../define';
+import '@umbraco-ui/uui-checkbox/define';
+import '@umbraco-ui/uui-input/define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-label/lib/index';
-import '@umbraco-ui/uui-input/lib/index';
-import '@umbraco-ui/uui-checkbox/lib/index';
 
 export default {
   id: 'uui-label',
@@ -59,11 +60,11 @@ export const ConnectWithFormControl: Story = () => html`
 
 <uui-label for="MySelect">My Label</uui-label>
 <uui-select id="MySelect" label="My A11Y Label" .options=${[
-  { name: 'Carrot', value: 'orange' },
-  { name: 'Cucumber', value: 'green' },
-  { name: 'Aubergine', value: 'purple', selected: true },
-  { name: 'Blueberry', value: 'Blue' },
-  { name: 'Banana', value: 'yellow' },
-  { name: 'Strawberry', value: 'red' },
-]}></uui-select>
+    { name: 'Carrot', value: 'orange' },
+    { name: 'Cucumber', value: 'green' },
+    { name: 'Aubergine', value: 'purple', selected: true },
+    { name: 'Blueberry', value: 'Blue' },
+    { name: 'Banana', value: 'yellow' },
+    { name: 'Strawberry', value: 'red' },
+  ]}></uui-select>
 `;

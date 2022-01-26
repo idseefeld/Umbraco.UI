@@ -1,14 +1,7 @@
-import { html, css } from 'lit';
-import {
-  InputType,
-  UUIInputElement,
-} from '@umbraco-ui/uui-input/lib/uui-input.element';
+import { iconSee, iconUnsee } from '@umbraco-ui/uui-icon-registry-essential';
+import { InputType, UUIInputElement } from '@umbraco-ui/uui-input';
+import { css, html } from 'lit';
 import { property, state } from 'lit/decorators.js';
-
-import {
-  iconSee,
-  iconUnsee,
-} from '@umbraco-ui/uui-icon-registry-essential/lib/svgs';
 
 /**
  * @element uui-input-password
@@ -38,7 +31,7 @@ export class UUIInputPasswordElement extends UUIInputElement {
     return this.passwordType;
   }
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  set type(_newValue) {}
+  set type(_newValue) { }
 
   onPasswordToggle() {
     if (this.passwordType === 'password') {

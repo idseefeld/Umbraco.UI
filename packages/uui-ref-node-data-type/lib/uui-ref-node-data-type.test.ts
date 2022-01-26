@@ -6,7 +6,7 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUIRefNodeDataTypeElement } from './uui-ref-node-data-type.element';
-import '.';
+import '../define';
 
 describe('UUIRefNodeDataTypeElement', () => {
   let element: UUIRefNodeDataTypeElement;

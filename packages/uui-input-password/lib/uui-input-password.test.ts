@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIInputPasswordElement } from './uui-input-password.element';
-import '.';
+import '../define';
 
 describe('UUIInputPasswordElement', () => {
   let element: UUIInputPasswordElement;

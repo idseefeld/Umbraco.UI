@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIButtonInlineCreateElement } from './uui-button-inline-create.element';
-import '.';
+import '../define';
 
 describe('UUIButtonInlineCreateElement', () => {
   let element: UUIButtonInlineCreateElement;

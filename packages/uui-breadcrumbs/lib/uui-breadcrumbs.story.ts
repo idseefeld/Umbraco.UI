@@ -1,6 +1,7 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-breadcrumbs/lib/index';
 
 export default {
   title: 'Buttons/Breadcrumbs',
@@ -17,11 +18,11 @@ const links = [
 export const Overview: Story = () =>
   html`<uui-breadcrumbs
     >${links.map(
-      link =>
-        html`<uui-breadcrumb-item .href=${link.link}
+    link =>
+      html`<uui-breadcrumb-item .href=${link.link}
           >${link.name}</uui-breadcrumb-item
         >`
-    )}</uui-breadcrumbs
+  )}</uui-breadcrumbs
   >`;
 
 Overview.parameters = {

@@ -1,6 +1,6 @@
 import { html, fixture, expect, elementUpdated } from '@open-wc/testing';
 import { UUISelectElement } from './uui-select.element';
-import '.';
+import '../define';
 
 const options: Array<Option> = [
   { name: 'Carrot', value: 'orange' },

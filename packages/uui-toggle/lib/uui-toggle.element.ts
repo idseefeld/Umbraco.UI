@@ -1,12 +1,6 @@
-import {
-  UUIHorizontalShakeAnimationValue,
-  UUIHorizontalShakeKeyframes,
-} from '@umbraco-ui/uui-base';
-import { UUIBooleanInputElement } from '@umbraco-ui/uui-boolean-input/lib/uui-boolean-input.element';
-import {
-  iconCheck,
-  iconWrong,
-} from '@umbraco-ui/uui-icon-registry-essential/lib/svgs';
+import { UUIHorizontalShakeAnimationValue, UUIHorizontalShakeKeyframes } from '@umbraco-ui/uui-base';
+import { UUIBooleanInputElement } from '@umbraco-ui/uui-boolean-input';
+import { iconCheck, iconWrong } from '@umbraco-ui/uui-icon-registry-essential';
 import { css, html } from 'lit';
 
 /**

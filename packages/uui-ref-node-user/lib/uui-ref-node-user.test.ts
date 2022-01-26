@@ -6,7 +6,7 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUIRefNodeUserElement } from './uui-ref-node-user.element';
-import '.';
+import '../define';
 
 describe('UUIRefNodeUserElement', () => {
   let element: UUIRefNodeUserElement;

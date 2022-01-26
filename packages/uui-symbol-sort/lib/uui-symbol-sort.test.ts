@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUISymbolSortElement } from './uui-symbol-sort.element';
-import '.';
+import '../define';
 
 describe('UUISymbolSortElement', () => {
   let element: UUISymbolSortElement;

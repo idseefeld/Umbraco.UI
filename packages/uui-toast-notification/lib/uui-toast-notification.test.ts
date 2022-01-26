@@ -1,15 +1,9 @@
-import '.';
+import '../define';
 import '@umbraco-ui/uui-button/define';
-import '@umbraco-ui/uui-icon/lib';
+import '@umbraco-ui/uui-icon/define';
 
-import {
-  elementUpdated,
-  expect,
-  fixture,
-  html,
-  oneEvent,
-} from '@open-wc/testing';
-import { UUIButtonElement } from '@umbraco-ui/uui-button/lib/uui-button.element';
+import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
+import { UUIButtonElement } from '@umbraco-ui/uui-button';
 
 import { UUIToastNotificationElement } from './uui-toast-notification.element';
 import { UUIToastNotificationEvent } from './UUIToastNotificationEvent';

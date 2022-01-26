@@ -1,14 +1,8 @@
-import '.';
+import '../define';
 
-import {
-  elementUpdated,
-  expect,
-  fixture,
-  html,
-  oneEvent,
-} from '@open-wc/testing';
+import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { UUISelectableEvent } from '@umbraco-ui/uui-base';
-import { UUICardEvent } from '@umbraco-ui/uui-card/lib/UUICardEvent';
+import { UUICardEvent } from '@umbraco-ui/uui-card';
 
 import { UUICardUserElement } from './uui-card-user.element';
 

@@ -6,7 +6,7 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUIMenuItemElement } from './uui-menu-item.element';
-import '.';
+import '../define';
 
 describe('UUIMenuItemElement', () => {
   let element: UUIMenuItemElement;

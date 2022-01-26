@@ -1,6 +1,7 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-textarea/lib/index';
 
 export default {
   id: 'uui-textarea',
@@ -14,7 +15,7 @@ export default {
 export const AAAOverview: Story = props =>
   html`<uui-textarea
     style="--uui-textarea-min-height: ${props[
-      '--uui-textarea-min-height'
+    '--uui-textarea-min-height'
     ]}; --uui-textarea-max-height: ${props['--uui-textarea-max-height']}"
     .label=${props.label}
     ?auto-height=${props.autoHeight}
@@ -114,7 +115,7 @@ export const AutoHeight: Story = props =>
   html` <uui-textarea
     label="Label"
     style="--uui-textarea-min-height: ${props[
-      '--uui-textarea-min-height'
+    '--uui-textarea-min-height'
     ]}; --uui-textarea-max-height: ${props['--uui-textarea-max-height']}"
     ?auto-height=${props.autoHeight}></uui-textarea>`;
 

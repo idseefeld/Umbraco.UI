@@ -1,7 +1,9 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+
 import { ArrayOfUmbracoWords } from '../../../storyhelpers/UmbracoWordGenerator';
-import './index';
 
 export default {
   id: 'uui-ref-node-form',
@@ -178,12 +180,12 @@ const listOfNodeNames: string[] = ArrayOfUmbracoWords(10);
 export const Listed: Story = () => html`
   <uui-ref-list style="max-width: 420px;">
     ${listOfNodeNames.map(
-      name => html`<uui-ref-node-form name=${name} detail="Description here...">
+  name => html`<uui-ref-node-form name=${name} detail="Description here...">
         <uui-action-bar slot="actions">
           <uui-button label="Remove">Remove</uui-button>
         </uui-action-bar>
       </uui-ref-node-form>`
-    )}
+)}
   </uui-ref-list>
 `;
 

@@ -1,4 +1,4 @@
-import '@umbraco-ui/uui-button-group/lib';
+import '../define';
 
 import { Story } from '@storybook/web-components';
 import { InterfaceLookNames, InterfaceLookType } from '@umbraco-ui/uui-base';
@@ -15,8 +15,8 @@ const buttons = ['development', 'staging', 'live'];
 export const AAAOverview: Story = () =>
   html`<uui-button-group
     >${buttons.map(
-      el => html`<uui-button look="secondary">${el}</uui-button>`
-    )}</uui-button-group
+    el => html`<uui-button look="secondary">${el}</uui-button>`
+  )}</uui-button-group
   >`;
 AAAOverview.storyName = 'Overview';
 AAAOverview.parameters = {
@@ -36,8 +36,8 @@ function uppercaseFirstLetter(s: string) {
 }
 export const AllStyles = () => html`
   ${InterfaceLookNames.map(
-    (lookName: InterfaceLookType) =>
-      html` <uui-button-group>
+  (lookName: InterfaceLookType) =>
+    html` <uui-button-group>
           <uui-button .look=${lookName}>
             ${uppercaseFirstLetter(lookName)} look
           </uui-button>
@@ -47,15 +47,15 @@ export const AllStyles = () => html`
             Large other option
           </uui-button> </uui-button-group
         ><br /><br /><br />`
-  )}
+)}
 `;
 
 export const MixedLooks = () =>
   html`<uui-button-group>
     <uui-button look="primary">Hello</uui-button>
     ${buttons.map(
-      el => html`<uui-button look="secondary">${el}</uui-button>`
-    )}<uui-button look="danger">World</uui-button></uui-button-group
+    el => html`<uui-button look="secondary">${el}</uui-button>`
+  )}<uui-button look="danger">World</uui-button></uui-button-group
   >`;
 MixedLooks.parameters = {
   docs: {

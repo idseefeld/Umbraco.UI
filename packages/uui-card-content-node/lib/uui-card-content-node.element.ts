@@ -1,6 +1,6 @@
+import { UUICardElement } from '@umbraco-ui/uui-card';
 import { css, html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { UUICardElement } from '@umbraco-ui/uui-card/lib/uui-card.element';
 
 /**
  *  @element uui-card-content-node
@@ -120,8 +120,8 @@ export class UUICardContentNodeElement extends UUICardElement {
         <span id="icon">
           <slot name="icon" @slotchange=${this._onSlotIconChange}></slot>
           ${this._iconSlotHasContent === false
-            ? this._renderFallbackIcon()
-            : ''}
+        ? this._renderFallbackIcon()
+        : ''}
         </span>
         <span id="name"> ${this.name} </span>
       </div>

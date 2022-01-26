@@ -20,8 +20,8 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-button.min.js",
-  "module": "./lib/index.js",
-  "types": "./define/index.d.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "customElements": "custom-elements.json",
   "exports": {
@@ -33,10 +33,6 @@
     "define": "define"
   },
   "files": [
-    "define",
-    "dist",
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
     "custom-elements.json"
   ],
   "dependencies": {
@@ -47,7 +43,7 @@
   },
   "scripts": {
     "build": "npm run analyze && tsc --build --force && rollup -c rollup.config.js",
-    "clean": "tsc --build --clean && rimraf dist lib/*.js lib/**/*.js lib/**/*.d.ts custom-elements.json",
+    "clean": "tsc --build --clean && rimraf dist custom-elements.json",
     "analyze": "web-component-analyzer **/*.element.ts --outFile custom-elements.json"
   },
   "publishConfig": {

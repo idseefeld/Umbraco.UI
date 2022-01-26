@@ -5,10 +5,7 @@ import {
   UUIHorizontalShakeAnimationValue,
   UUIHorizontalShakeKeyframes,
 } from '@umbraco-ui/uui-base';
-import {
-  iconCheck,
-  iconWrong,
-} from '@umbraco-ui/uui-icon-registry-essential/lib/svgs';
+import { iconCheck, iconWrong } from '@umbraco-ui/uui-icon-registry-essential';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

@@ -1,12 +1,8 @@
-import {
-  html,
-  fixture,
-  expect,
-  elementUpdated,
-  oneEvent,
-} from '@open-wc/testing';
+import '../define';
+
+import { elementUpdated, expect, fixture, html, oneEvent } from '@open-wc/testing';
+
 import { UUIInputElement } from './uui-input.element';
-import './index';
 import { UUIInputEvent } from './UUIInputEvent';
 
 describe('UuiInputElement', () => {

@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIKeyboardShortcutElement } from './uui-keyboard-shortcut.element';
-import '.';
+import '../define';
 
 describe('UUIKey', () => {
   let element: UUIKeyboardShortcutElement;

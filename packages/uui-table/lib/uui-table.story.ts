@@ -1,9 +1,11 @@
-import { html } from 'lit-html';
-import { ArrayOfUmbracoWords } from '../../../storyhelpers/UmbracoWordGenerator';
-import { Story } from '@storybook/web-components';
-import '@umbraco-ui/uui-table/lib/index';
-import '@umbraco-ui/uui-box/lib/index';
+import '../define';
 import './uui-table-advanced-example';
+import '@umbraco-ui/uui-box/define';
+
+import { Story } from '@storybook/web-components';
+import { html } from 'lit-html';
+
+import { ArrayOfUmbracoWords } from '../../../storyhelpers/UmbracoWordGenerator';
 
 export default {
   title: 'Layout/Table',
@@ -27,18 +29,18 @@ export const AAAOverview: Story = props =>
       <uui-table-head
         style="background-color: ${props.headBackgroundColor}; color: ${props.headColor}">
         ${ArrayOfUmbracoWords(3).map(
-          el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
-        )}
+    el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
+  )}
       </uui-table-head>
       <uui-table-row>
         ${ArrayOfUmbracoWords(3).map(
-          el => html`<uui-table-cell>${el}</uui-table-cell>`
-        )}
+    el => html`<uui-table-cell>${el}</uui-table-cell>`
+  )}
       </uui-table-row>
       <uui-table-row>
         ${ArrayOfUmbracoWords(3).map(
-          el => html`<uui-table-cell>${el}</uui-table-cell>`
-        )}
+    el => html`<uui-table-cell>${el}</uui-table-cell>`
+  )}
       </uui-table-row>
     </uui-table>
   `;
@@ -124,18 +126,18 @@ export const SelectableRows: Story = () =>
           style="width: 5%; min-width: 32px; max-width: 48px;"></uui-table-column>
         <uui-table-head>
           ${ArrayOfUmbracoWords(5).map(
-            el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
-          )}
+    el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
+  )}
         </uui-table-head>
         <uui-table-row selectable>
           ${ArrayOfUmbracoWords(5).map(
-            el => html`<uui-table-cell>${el}</uui-table-cell>`
-          )}
+    el => html`<uui-table-cell>${el}</uui-table-cell>`
+  )}
         </uui-table-row>
         <uui-table-row selectable>
           ${ArrayOfUmbracoWords(5).map(
-            el => html`<uui-table-cell>${el}</uui-table-cell>`
-          )}
+    el => html`<uui-table-cell>${el}</uui-table-cell>`
+  )}
         </uui-table-row>
       </uui-table>
     </div>
@@ -182,18 +184,18 @@ export const OverflowDetection: Story = () =>
           style="width: 5%; min-width: 32px; max-width: 48px;"></uui-table-column>
         <uui-table-head>
           ${ArrayOfUmbracoWords(7).map(
-            el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
-          )}
+    el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
+  )}
         </uui-table-head>
         <uui-table-row>
           ${ArrayOfUmbracoWords(7).map(
-            el => html`<uui-table-cell clip-text>${el}</uui-table-cell>`
-          )}
+    el => html`<uui-table-cell clip-text>${el}</uui-table-cell>`
+  )}
         </uui-table-row>
         <uui-table-row>
           ${ArrayOfUmbracoWords(7).map(
-            el => html`<uui-table-cell clip-text>${el}</uui-table-cell>`
-          )}
+    el => html`<uui-table-cell clip-text>${el}</uui-table-cell>`
+  )}
         </uui-table-row>
       </uui-table>
     </div>
@@ -233,18 +235,18 @@ export const InABox: Story = () =>
       <uui-table>
         <uui-table-head>
           ${ArrayOfUmbracoWords(7).map(
-            el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
-          )}
+    el => html`<uui-table-head-cell>${el}</uui-table-head-cell>`
+  )}
         </uui-table-head>
         <uui-table-row>
           ${ArrayOfUmbracoWords(7).map(
-            el => html`<uui-table-cell>${el}</uui-table-cell>`
-          )}
+    el => html`<uui-table-cell>${el}</uui-table-cell>`
+  )}
         </uui-table-row>
         <uui-table-row>
           ${ArrayOfUmbracoWords(7).map(
-            el => html`<uui-table-cell>${el}</uui-table-cell>`
-          )}
+    el => html`<uui-table-cell>${el}</uui-table-cell>`
+  )}
         </uui-table-row>
       </uui-table>
     </uui-box>

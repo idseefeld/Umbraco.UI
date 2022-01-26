@@ -1,6 +1,7 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-symbol-sort/lib/index';
 
 export default {
   id: 'uui-symbol-sort',
@@ -40,19 +41,19 @@ export const Overview: Story = props =>
 
     <button
       @click=${(e: MouseEvent) => {
-        const sortArrowEl = (e.target as any).querySelector('uui-symbol-sort');
-        // sorting algorithm/behaviour is not part of the symbol, therefor we need to do something like this in our implementation.
-        if (sortArrowEl.active !== true) {
-          sortArrowEl.active = true;
-          return;
-        }
-        if (sortArrowEl.descending !== true) {
-          sortArrowEl.descending = true;
-        } else {
-          sortArrowEl.descending = false;
-          sortArrowEl.active = false;
-        }
-      }}>
+      const sortArrowEl = (e.target as any).querySelector('uui-symbol-sort');
+      // sorting algorithm/behaviour is not part of the symbol, therefor we need to do something like this in our implementation.
+      if (sortArrowEl.active !== true) {
+        sortArrowEl.active = true;
+        return;
+      }
+      if (sortArrowEl.descending !== true) {
+        sortArrowEl.descending = true;
+      } else {
+        sortArrowEl.descending = false;
+        sortArrowEl.active = false;
+      }
+    }}>
       Header example
       <uui-symbol-sort
         ?active=${props.active}

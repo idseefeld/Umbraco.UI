@@ -1,6 +1,7 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-loader/lib/index';
 
 export default {
   title: 'Loaders/Loader',

@@ -20,12 +20,19 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-boolean-input.min.js",
-  "module": "./lib/index.js",
+  "module": "./dist/index.js",
+  "type": "module",
+  "types": "./dist/index.d.ts",
   "customElements": "custom-elements.json",
+  "exports": {
+    ".": "./dist/index.js",
+    "./define": "./dist/define.js"
+  },
+  "directories": {
+    "dist": "./dist",
+    "define": "./define"
+  },
   "files": [
-    "dist",
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
     "custom-elements.json"
   ],
   "dependencies": {
@@ -33,7 +40,7 @@
   },
   "scripts": {
     "build": "npm run analyze && tsc --build --force && rollup -c rollup.config.js",
-    "clean": "tsc --build --clean && rimraf dist lib/*.js lib/**/*.js custom-elements.json",
+    "clean": "tsc --build --clean && rimraf dist custom-elements.json",
     "analyze": "web-component-analyzer **/*.element.ts --outFile custom-elements.json"
   },
   "publishConfig": {

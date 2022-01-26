@@ -1,6 +1,7 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-toast-notification-layout/lib/index';
 
 export default {
   id: 'uui-toast-notification-layout',

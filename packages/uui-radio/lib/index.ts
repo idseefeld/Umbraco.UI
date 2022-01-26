@@ -1,7 +1,3 @@
-import { defineElement } from '@umbraco-ui/uui-base';
-
-import { UUIRadioGroupElement } from './uui-radio-group.element';
-import { UUIRadioElement } from './uui-radio.element';
-
-defineElement('uui-radio', UUIRadioElement);
-defineElement('uui-radio-group', UUIRadioGroupElement);
+export * from './uui-radio.element';
+export * from './UUIRadioEvent';
+export * from './UUIRadioGroupEvent';

@@ -1,9 +1,10 @@
-import { html } from 'lit-html';
-import '@umbraco-ui/uui-menu-item/lib/index';
+import '../define';
+
 import { Story } from '@storybook/web-components';
-import { UUIMenuItemEvent } from './UUIMenuItemEvent';
+import { html } from 'lit-html';
+
 import { UUIMenuItemElement } from './uui-menu-item.element';
-import './index';
+import { UUIMenuItemEvent } from './UUIMenuItemEvent';
 
 export default {
   title: 'Buttons/Menu Item',
@@ -78,11 +79,11 @@ export const Nested = () =>
   html`
     <div style="max-width: 500px;">
       ${labelNames.map(
-        (name: string) =>
-          html` <uui-menu-item label="${name}" has-children>
+    (name: string) =>
+      html` <uui-menu-item label="${name}" has-children>
             ${renderItems()}
           </uui-menu-item>`
-      )}
+  )}
     </div>
   `;
 Nested.parameters = {

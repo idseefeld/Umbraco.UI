@@ -1,11 +1,6 @@
-import {
-  demandCustomElement,
-  InterfaceLookDefaultValue,
-  InterfaceLookType,
-  Timer,
-} from '@umbraco-ui/uui-base';
-import { UUITextStyles } from '@umbraco-ui/uui-css/lib/uui-text.styles';
-import { iconRemove } from '@umbraco-ui/uui-icon-registry-essential/lib/svgs/';
+import { demandCustomElement, InterfaceLookDefaultValue, InterfaceLookType, Timer } from '@umbraco-ui/uui-base';
+import { UUITextStyles } from '@umbraco-ui/uui-css';
+import { iconRemove } from '@umbraco-ui/uui-icon-registry-essential';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

@@ -6,7 +6,7 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUILabelElement } from './uui-label.element';
-import '.';
+import '../define';
 
 describe('UUILabelElement', () => {
   let element: UUILabelElement;

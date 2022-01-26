@@ -37,7 +37,7 @@ export const CacheCustomProperties = async masterCSSPath => {
 
     try {
       await fs.writeFile(
-        './custom-properties.js',
+        './custom-properties.cjs',
         `module.exports = ${json};`,
         'utf8'
       );

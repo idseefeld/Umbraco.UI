@@ -6,7 +6,7 @@ import {
   oneEvent,
 } from '@open-wc/testing';
 import { UUIToggleElement } from './uui-toggle.element';
-import '.';
+import '../define';
 
 describe('UuiToggle', () => {
   let element: UUIToggleElement;

@@ -9,7 +9,7 @@ import {
   unsafeStatic,
 } from '@open-wc/testing';
 import { UUIBooleanInputElement } from './uui-boolean-input.element';
-import '.';
+import '../define';
 import { html as litHTMLLiteral } from 'lit';
 
 const tagName = defineCE(

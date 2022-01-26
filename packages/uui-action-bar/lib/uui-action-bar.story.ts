@@ -1,6 +1,6 @@
 import '@umbraco-ui/uui-action-bar/define';
 import '@umbraco-ui/uui-button/define';
-import '@umbraco-ui/uui-icon/lib';
+import '@umbraco-ui/uui-icon/define';
 
 import { InterfaceLookNames, InterfaceLookType } from '@umbraco-ui/uui-base';
 import { html } from 'lit-html';

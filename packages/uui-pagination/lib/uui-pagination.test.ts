@@ -6,7 +6,7 @@ import {
   oneEvent,
 } from '@open-wc/testing';
 import { UUIPaginationElement } from './uui-pagination.element';
-import '.';
+import '../define';
 
 describe('UUIPaginationElement', () => {
   let element: UUIPaginationElement;

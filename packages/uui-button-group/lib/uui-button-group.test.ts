@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIButtonGroupElement } from './uui-button-group.element';
-import '.';
+import '../define';
 
 describe('UuiButton', () => {
   let element: UUIButtonGroupElement;

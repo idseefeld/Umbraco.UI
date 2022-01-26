@@ -1,6 +1,7 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-toggle/lib/index';
 
 export default {
   title: 'Inputs/Toggle',
@@ -29,8 +30,8 @@ export const AAAOverview: Story = props =>
   html`
     <uui-toggle
       style="--uui-toggle-size: ${props[
-        '--uui-toggle-size'
-      ]}; --uui-toggle-switch-width: ${props['--uui-toggle-switch-width']};"
+    '--uui-toggle-size'
+    ]}; --uui-toggle-switch-width: ${props['--uui-toggle-switch-width']};"
       .value=${props.value}
       .name=${props.name}
       .error=${props.error}

@@ -1,6 +1,6 @@
-import '.';
+import '../define';
 import '@umbraco-ui/uui-button/define';
-import '@umbraco-ui/uui-icon/lib';
+import '@umbraco-ui/uui-icon/define';
 
 import { expect, fixture, html } from '@open-wc/testing';
 

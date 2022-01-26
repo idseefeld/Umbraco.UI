@@ -1,7 +1,9 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+
 import { ArrayOfUmbracoWords } from '../../../storyhelpers/UmbracoWordGenerator';
-import './index';
 
 export default {
   id: 'uui-ref-node-package',
@@ -205,7 +207,7 @@ const listOfNodeNames: string[] = ArrayOfUmbracoWords(10);
 export const Listed: Story = () => html`
   <uui-ref-list style="max-width: 420px;">
     ${listOfNodeNames.map(
-      name => html`<uui-ref-node-package
+  name => html`<uui-ref-node-package
         name="${name}"
         version="1.1"
         author="Umbraco HQ">
@@ -215,7 +217,7 @@ export const Listed: Story = () => html`
           ></uui-button>
         </uui-action-bar>
       </uui-ref-node-package>`
-    )}
+)}
   </uui-ref-list>
 `;
 

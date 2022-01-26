@@ -6,7 +6,7 @@ import {
   elementUpdated,
 } from '@open-wc/testing';
 import { UUIRefNodeFormElement } from './uui-ref-node-form.element';
-import '.';
+import '../define';
 
 describe('UUIRefNodeFormElement', () => {
   let element: UUIRefNodeFormElement;

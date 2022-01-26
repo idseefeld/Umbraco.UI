@@ -1,6 +1,7 @@
-import { html } from 'lit-html';
-import '@umbraco-ui/uui-radio/lib/index';
+import '../define';
+
 import { Story } from '@storybook/web-components';
+import { html } from 'lit-html';
 
 export default {
   title: 'Inputs/Radio',

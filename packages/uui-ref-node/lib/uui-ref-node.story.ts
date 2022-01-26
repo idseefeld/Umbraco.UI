@@ -1,7 +1,9 @@
+import '../define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
+
 import { ArrayOfUmbracoWords } from '../../../storyhelpers/UmbracoWordGenerator';
-import './index';
 
 export default {
   id: 'uui-ref-node',
@@ -193,7 +195,7 @@ const listOfNodeNames: string[] = ArrayOfUmbracoWords(10);
 export const Listed: Story = () => html`
   <uui-ref-list style="max-width: 420px;">
     ${listOfNodeNames.map(
-      name => html`<uui-ref-node name=${name} detail="path/to/nowhere">
+  name => html`<uui-ref-node name=${name} detail="path/to/nowhere">
         <uui-tag size="s" slot="tag" look="positive">Published</uui-tag>
         <uui-action-bar slot="actions">
           <uui-button type="button" label="Delete"
@@ -201,7 +203,7 @@ export const Listed: Story = () => html`
           ></uui-button>
         </uui-action-bar>
       </uui-ref-node>`
-    )}
+)}
   </uui-ref-list>
 `;
 

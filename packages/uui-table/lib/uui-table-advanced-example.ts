@@ -1,12 +1,12 @@
+import '../define';
 import '@umbraco-ui/uui-avatar/define';
-import '@umbraco-ui/uui-box/lib';
+import '@umbraco-ui/uui-box/define';
 import '@umbraco-ui/uui-button/define';
-import '@umbraco-ui/uui-icon/lib';
-import '@umbraco-ui/uui-progress-bar/lib';
-import '@umbraco-ui/uui-table/lib';
-import '@umbraco-ui/uui-tag/lib';
+import '@umbraco-ui/uui-icon/define';
+import '@umbraco-ui/uui-progress-bar/define';
+import '@umbraco-ui/uui-tag/define';
 
-import { UUITextStyles } from '@umbraco-ui/uui-css/lib/uui-text.styles';
+import { UUITextStyles } from '@umbraco-ui/uui-css';
 import { css, html, LitElement } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -144,11 +144,11 @@ export class UUITableWithSelectionExampleElement extends LitElement {
         sort: (items: Array<TableItem>, desc: boolean) => {
           return desc
             ? [...items].sort(
-                (a, b) => +new Date(b.signUpDate) - +new Date(a.signUpDate)
-              )
+              (a, b) => +new Date(b.signUpDate) - +new Date(a.signUpDate)
+            )
             : [...items].sort(
-                (a, b) => +new Date(a.signUpDate) - +new Date(b.signUpDate)
-              );
+              (a, b) => +new Date(a.signUpDate) - +new Date(b.signUpDate)
+            );
         },
       },
       {
@@ -164,11 +164,11 @@ export class UUITableWithSelectionExampleElement extends LitElement {
         sort: (items: Array<TableItem>, desc: boolean) => {
           return desc
             ? [...items].sort(
-                (a, b) => Number(a.newsletter) - Number(b.newsletter)
-              )
+              (a, b) => Number(a.newsletter) - Number(b.newsletter)
+            )
             : [...items].sort(
-                (a, b) => Number(b.newsletter) - Number(a.newsletter)
-              );
+              (a, b) => Number(b.newsletter) - Number(a.newsletter)
+            );
         },
       },
     ];
@@ -281,7 +281,7 @@ export class UUITableWithSelectionExampleElement extends LitElement {
               style="padding: var(--uui-size-4) var(--uui-size-5);"
               @change="${this._selectAllHandler}"
               ?checked="${this._selection.length ===
-              this._items.length}"></uui-checkbox>
+      this._items.length}"></uui-checkbox>
           </uui-table-head-cell>
           ${this._columns.map(column => this.renderHeaderCellTemplate(column))}
         </uui-table-head>

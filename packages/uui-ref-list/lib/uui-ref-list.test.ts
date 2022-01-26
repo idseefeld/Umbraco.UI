@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIRefListElement } from './uui-ref-list.element';
-import '.';
+import '../define';
 
 describe('UUIRefListElement', () => {
   let element: UUIRefListElement;

@@ -1,4 +1,4 @@
-import { UUIButtonElement } from '../lib';
+import { UUIButtonElement } from '..';
 
 declare global {
   interface HTMLElementTagNameMap {

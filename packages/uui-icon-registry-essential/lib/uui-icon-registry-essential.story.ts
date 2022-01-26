@@ -1,7 +1,9 @@
+import '../define';
+import '@umbraco-ui/uui-icon/define';
+
 import { Story } from '@storybook/web-components';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-icon-registry-essential/lib/index';
-import '@umbraco-ui/uui-icon/lib/index';
+
 import { UUIIconRegistryEssential } from './UUIIconRegistryEssential';
 
 export default {
@@ -38,7 +40,7 @@ export const Overview: Story = () => {
         place-items: start;
         justify-content: space-between;">
       ${sortedIcons?.map(
-        name => html`
+    name => html`
           <div
             style="width:100%; display: flex; flex-direction: column; align-items: center;">
             <uui-icon
@@ -47,7 +49,7 @@ export const Overview: Story = () => {
             <small>${name}</small>
           </div>
         `
-      )}
+  )}
     </uui-icon-registry-essential>
   `;
 };

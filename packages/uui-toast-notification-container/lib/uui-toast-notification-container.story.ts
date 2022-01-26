@@ -1,10 +1,11 @@
+import '../define';
+import '@umbraco-ui/uui-toast-notification-layout/define';
+import '@umbraco-ui/uui-toast-notification/define';
+
 import { Story } from '@storybook/web-components';
+import { UUIToastNotificationElement } from '@umbraco-ui/uui-toast-notification';
+import { UUIToastNotificationLayoutElement } from '@umbraco-ui/uui-toast-notification-layout';
 import { html } from 'lit-html';
-import '@umbraco-ui/uui-toast-notification-container/lib/index';
-import '@umbraco-ui/uui-toast-notification/lib/index';
-import { UUIToastNotificationElement } from '@umbraco-ui/uui-toast-notification/lib/uui-toast-notification.element';
-import '@umbraco-ui/uui-toast-notification-layout/lib/index';
-import { UUIToastNotificationLayoutElement } from '@umbraco-ui/uui-toast-notification-layout/lib/uui-toast-notification-layout.element';
 
 export default {
   id: 'uui-toast-notification-container',

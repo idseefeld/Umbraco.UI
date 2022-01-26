@@ -1,6 +1,6 @@
 import { html, fixture, expect, elementUpdated } from '@open-wc/testing';
 import { UUIProgressBarElement } from './uui-progress-bar.element';
-import '.';
+import '../define';
 
 describe('UUIProgressBarElement', () => {
   let element: UUIProgressBarElement;

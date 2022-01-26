@@ -20,12 +20,19 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-input-password.min.js",
-  "module": "./lib/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "customElements": "custom-elements.json",
+  "directories": {
+    "dist": "./dist",
+    "define": "./define"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./define": "./define/index.js"
+  },
   "files": [
-    "dist",
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
     "custom-elements.json"
   ],
   "dependencies": {
@@ -35,7 +42,7 @@
   },
   "scripts": {
     "build": "npm run analyze && tsc --build --force && rollup -c rollup.config.js",
-    "clean": "tsc --build --clean && rimraf dist lib/*.js lib/**/*.js custom-elements.json",
+    "clean": "tsc --build --clean && rimraf dist custom-elements.json",
     "analyze": "web-component-analyzer **/*.element.ts --outFile custom-elements.json"
   },
   "publishConfig": {

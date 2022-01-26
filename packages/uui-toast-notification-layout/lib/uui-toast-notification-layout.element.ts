@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { UUITextStyles } from '@umbraco-ui/uui-css';
+import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { UUITextStyles } from '@umbraco-ui/uui-css/lib/uui-text.styles';
 
 /**
  *  @element uui-toast-notification-layout
@@ -58,8 +58,8 @@ export class UUIToastNotificationLayoutElement extends LitElement {
       <div id="message" class="uui-text">
         <h5
           style=${this._headlineSlotHasContent || this.headline !== null
-            ? ''
-            : 'display: none'}>
+        ? ''
+        : 'display: none'}>
           ${this.headline}
           <slot name="headline" @slotchange=${this._headlineSlotChanged}></slot>
         </h5>
