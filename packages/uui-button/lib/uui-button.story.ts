@@ -1,5 +1,5 @@
 import '../define';
-import '@umbraco-ui/uui-badge/lib';
+import '@umbraco-ui/uui-badge/define';
 import '@umbraco-ui/uui-icon/lib';
 
 import { Story } from '@storybook/web-components';

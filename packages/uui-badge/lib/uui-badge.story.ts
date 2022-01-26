@@ -1,4 +1,4 @@
-import '@umbraco-ui/uui-badge/lib';
+import '../define';
 
 import { Story } from '@storybook/web-components';
 import { InterfaceLookNames, InterfaceLookType } from '@umbraco-ui/uui-base';
