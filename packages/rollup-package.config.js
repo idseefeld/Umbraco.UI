@@ -13,7 +13,7 @@ import importCss from 'rollup-plugin-import-css';
 import properties from '../packages/uui-css/custom-properties.module.js'; // eslint-disable-line
 // @ts-ignore-end
 
-const esbuidOptions = { minify: true };
+const esbulidOptions = { minify: true };
 
 const createEsModulesConfig = (entryPoints = []) => {
   return [
@@ -55,39 +55,35 @@ const createCSSFilesConfig = (cssFiles = []) => {
   ];
 };
 
-const createBundleConfig = (bundle, namespace, test) => {
+const createBundleConfig = (namespace) => {
   const packageJson = readPackageJson('./');
   const bundleName = packageJson.name.replace('@umbraco-ui/', '');
 
-  return bundle
-    ? {
-        input: test ? bundle : `lib/${bundle}.ts`,
-        output: {
-          file: `./dist/${bundleName}.min.js`,
-          format: 'umd',
-          sourcemap: true,
-          name: namespace,
-        },
-        plugins: [
-          nodeResolve(),
-          importCss(),
-          processLitCSSPlugin(),
-          minifyHTML(),
-          esbuild(esbuidOptions),
-        ],
-      }
-    : undefined;
+  return {
+    input: `define/index.js`,
+    output: {
+      file: `./dist/${bundleName}.min.js`,
+      format: 'iife',
+      sourcemap: true,
+      name: namespace,
+    },
+    plugins: [
+      nodeResolve(),
+      importCss(),
+      processLitCSSPlugin(),
+      minifyHTML(),
+      esbuild(esbulidOptions),
+    ],
+  }
 };
 
 export const UUIProdConfig = ({
   entryPoints = [],
   cssFiles = [],
-  bundle,
-  namespace = '',
-  test = false,
+  namespace = ''
 }) => {
   const cssFilesConfig = createCSSFilesConfig(cssFiles);
   const esModulesConfig = createEsModulesConfig(entryPoints);
-  const bundleConfig = createBundleConfig(bundle, namespace, test);
+  const bundleConfig = createBundleConfig(namespace);
   return [...cssFilesConfig, ...esModulesConfig, bundleConfig].filter(x => x);
 };
