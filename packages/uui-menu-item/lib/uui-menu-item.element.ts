@@ -1,10 +1,7 @@
-import { LitElement, css, html } from 'lit';
+import { ActiveMixin, LabelMixin, SelectableMixin } from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import {
-  ActiveMixin,
-  LabelMixin,
-  SelectableMixin,
-} from '@umbraco-ui/uui-base/lib/mixins';
+
 import { UUIMenuItemEvent } from './UUIMenuItemEvent';
 
 /**

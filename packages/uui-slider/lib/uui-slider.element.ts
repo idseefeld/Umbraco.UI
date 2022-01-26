@@ -1,9 +1,9 @@
-import { LitElement, html, css, svg, nothing } from 'lit';
+import { UUIHorizontalPulseKeyframes } from '@umbraco-ui/uui-base';
+import { css, html, LitElement, nothing, svg } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-
 import { styleMap } from 'lit/directives/style-map.js';
+
 import { nativeInputStyles } from './native-input.styles';
-import { UUIHorizontalPulseKeyframes } from '@umbraco-ui/uui-base/lib/animations';
 import { UUISliderEvent } from './UUISliderEvents';
 
 const TRACK_PADDING = 12;

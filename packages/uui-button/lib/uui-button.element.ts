@@ -1,12 +1,10 @@
 import {
-  UUIHorizontalShakeAnimationValue,
-  UUIHorizontalShakeKeyframes,
-} from '@umbraco-ui/uui-base/lib/animations';
-import { LabelMixin } from '@umbraco-ui/uui-base/lib/mixins';
-import {
   InterfaceLookDefaultValue,
   InterfaceLookType,
-} from '@umbraco-ui/uui-base/lib/types';
+  LabelMixin,
+  UUIHorizontalShakeAnimationValue,
+  UUIHorizontalShakeKeyframes,
+} from '@umbraco-ui/uui-base';
 import {
   iconCheck,
   iconWrong,

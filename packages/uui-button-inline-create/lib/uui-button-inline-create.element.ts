@@ -1,12 +1,14 @@
-import { LitElement, html, css } from 'lit';
-import { styleMap } from 'lit/directives/style-map.js';
-import { property, state } from 'lit/decorators.js';
 import {
-  UUIBlinkKeyframes,
+  LabelMixin,
   UUIBlinkAnimationValue,
-} from '@umbraco-ui/uui-base/lib/animations';
-import { LabelMixin } from '@umbraco-ui/uui-base/lib/mixins';
+  UUIBlinkKeyframes,
+} from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
+import { property, state } from 'lit/decorators.js';
+import { styleMap } from 'lit/directives/style-map.js';
+
 import { UUIButtonInlineCreateEvent } from './UUIButtonInlineCreateEvent';
+
 /**
  *  @element uui-inline-create-button
  *  @description - Special button for creating new elements

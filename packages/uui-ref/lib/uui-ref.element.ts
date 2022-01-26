@@ -1,9 +1,7 @@
-import { LitElement, css } from 'lit';
+import { SelectableMixin, SelectOnlyMixin } from '@umbraco-ui/uui-base';
+import { css, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import {
-  SelectableMixin,
-  SelectOnlyMixin,
-} from '@umbraco-ui/uui-base/lib/mixins';
+
 import { UUIRefEvent } from './UUIRefEvent';
 
 /**

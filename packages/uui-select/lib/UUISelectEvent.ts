@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUISelectElement } from './uui-select.element';
 
 export class UUISelectEvent extends UUIEvent<{}, UUISelectElement> {

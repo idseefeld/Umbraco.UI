@@ -1,7 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { InterfaceLookType } from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-
-import { InterfaceLookType } from '@umbraco-ui/uui-base/lib/types';
 
 /**
  *  A badge to notify that there is something that requires attention of the user. The badge is positioned with `position: absolute`. It will determine its position against the first ancestor with `position: relative`.

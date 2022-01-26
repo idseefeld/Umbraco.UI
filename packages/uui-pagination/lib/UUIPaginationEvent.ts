@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUIPaginationElement } from './uui-pagination.element';
 
 export class UUIPaginationEvent extends UUIEvent<{}, UUIPaginationElement> {

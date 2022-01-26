@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUICardElement } from './uui-card.element';
 
 export class UUICardEvent extends UUIEvent<{}, UUICardElement> {

@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUIToastNotificationElement } from './uui-toast-notification.element';
 
 export class UUIToastNotificationEvent extends UUIEvent<

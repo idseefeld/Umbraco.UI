@@ -1,13 +1,13 @@
-import { html, css } from 'lit';
 import {
-  UUIHorizontalShakeKeyframes,
   UUIHorizontalShakeAnimationValue,
-} from '@umbraco-ui/uui-base/lib/animations';
-import {
-  iconWrong,
-  iconCheck,
-} from '@umbraco-ui/uui-icon-registry-essential/lib/svgs';
+  UUIHorizontalShakeKeyframes,
+} from '@umbraco-ui/uui-base';
 import { UUIBooleanInputElement } from '@umbraco-ui/uui-boolean-input/lib/uui-boolean-input.element';
+import {
+  iconCheck,
+  iconWrong,
+} from '@umbraco-ui/uui-icon-registry-essential/lib/svgs';
+import { css, html } from 'lit';
 
 /**
  *  Umbraco Toggle-switch, toggles between off/on.

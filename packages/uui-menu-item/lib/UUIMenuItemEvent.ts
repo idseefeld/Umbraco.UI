@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUIMenuItemElement } from './uui-menu-item.element';
 
 export class UUIMenuItemEvent extends UUIEvent<{}, UUIMenuItemElement> {

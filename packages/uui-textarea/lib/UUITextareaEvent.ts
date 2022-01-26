@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUITextareaElement } from './uui-textarea.element';
 
 export class UUITextareaEvent extends UUIEvent<{}, UUITextareaElement> {

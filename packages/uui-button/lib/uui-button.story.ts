@@ -1,13 +1,10 @@
-import { html } from 'lit-html';
 import '../define';
-import '@umbraco-ui/uui-icon/lib/index';
-import '@umbraco-ui/uui-badge/lib/index';
+import '@umbraco-ui/uui-badge/lib';
+import '@umbraco-ui/uui-icon/lib';
 
-import {
-  InterfaceLookNames,
-  InterfaceLookType,
-} from '@umbraco-ui/uui-base/lib/types';
 import { Story } from '@storybook/web-components';
+import { InterfaceLookNames, InterfaceLookType } from '@umbraco-ui/uui-base';
+import { html } from 'lit-html';
 
 export default {
   title: 'Buttons/Button',

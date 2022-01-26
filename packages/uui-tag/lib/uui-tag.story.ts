@@ -1,7 +1,8 @@
-import { html } from 'lit-html';
-import { InterfaceLookNames } from '@umbraco-ui/uui-base/lib/types';
+import '@umbraco-ui/uui-tag/lib';
+
 import { Story } from '@storybook/web-components';
-import '@umbraco-ui/uui-tag/lib/index';
+import { InterfaceLookNames } from '@umbraco-ui/uui-base';
+import { html } from 'lit-html';
 
 export default {
   title: 'Displays/Tag',

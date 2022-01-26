@@ -1,9 +1,9 @@
-import { LitElement, html, css } from 'lit';
-import { property } from 'lit/decorators.js';
 import {
-  InterfaceLookType,
   InterfaceLookDefaultValue,
-} from '@umbraco-ui/uui-base/lib/types';
+  InterfaceLookType,
+} from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
+import { property } from 'lit/decorators.js';
 
 /**
  *

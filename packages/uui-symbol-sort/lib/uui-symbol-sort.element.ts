@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { ActiveMixin } from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import { ActiveMixin } from '@umbraco-ui/uui-base/lib/mixins';
 
 /**
  *  @element uui-symbol-sort

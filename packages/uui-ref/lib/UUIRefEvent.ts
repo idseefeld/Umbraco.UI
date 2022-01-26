@@ -1,4 +1,5 @@
-import { UUIEvent } from '@umbraco-ui/uui-base/lib/events';
+import { UUIEvent } from '@umbraco-ui/uui-base';
+
 import { UUIRefElement } from './uui-ref.element';
 
 export class UUIRefEvent extends UUIEvent<{}, UUIRefElement> {

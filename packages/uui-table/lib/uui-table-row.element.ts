@@ -1,9 +1,7 @@
-import { LitElement, css, html } from 'lit';
-import {
-  SelectableMixin,
-  SelectOnlyMixin,
-} from '@umbraco-ui/uui-base/lib/mixins';
+import { SelectableMixin, SelectOnlyMixin } from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
 import { queryAssignedNodes } from 'lit/decorators.js';
+
 import { UUITableCellElement } from './uui-table-cell.element';
 
 /**

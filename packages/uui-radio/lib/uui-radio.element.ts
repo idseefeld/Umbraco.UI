@@ -1,9 +1,10 @@
-import { html, css, LitElement } from 'lit';
-import { query, property } from 'lit/decorators.js';
 import {
-  UUIHorizontalShakeKeyframes,
   UUIHorizontalShakeAnimationValue,
-} from '@umbraco-ui/uui-base/lib/animations';
+  UUIHorizontalShakeKeyframes,
+} from '@umbraco-ui/uui-base';
+import { css, html, LitElement } from 'lit';
+import { property, query } from 'lit/decorators.js';
+
 import { UUIRadioEvent } from './UUIRadioEvent';
 
 /**

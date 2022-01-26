@@ -1,4 +1,4 @@
-import { defineElement } from '@umbraco-ui/uui-base/lib/registration';
+import { defineElement } from '@umbraco-ui/uui-base';
 
 import { UUIButtonElement } from '../lib';
 
