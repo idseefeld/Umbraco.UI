@@ -21,6 +21,7 @@
   },
   "main": "./dist/uui-action-bar.min.js",
   "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "customElements": "custom-elements.json",
   "directories": {
@@ -40,7 +41,7 @@
   },
   "scripts": {
     "build": "npm run analyze && tsc --build --force && rollup -c rollup.config.js",
-    "clean": "tsc --build --clean && rimraf dist lib/*.js lib/**/*.js custom-elements.json",
+    "clean": "tsc --build --clean && rimraf dist custom-elements.json",
     "analyze": "web-component-analyzer **/*.element.ts --outFile custom-elements.json"
   },
   "publishConfig": {
