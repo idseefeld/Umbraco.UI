@@ -21,7 +21,7 @@ const createEsModulesConfig = (entryPoints = []) => {
       return {
         input: `./lib/${name}.ts`,
         output: {
-          file: `./lib/${name}.js`,
+          file: `./dist/${name}.js`,
           format: 'es',
         },
         plugins: [
@@ -80,10 +80,11 @@ const createBundleConfig = (namespace) => {
 export const UUIProdConfig = ({
   entryPoints = [],
   cssFiles = [],
-  namespace = ''
+  namespace = '',
+  bundle = true
 }) => {
   const cssFilesConfig = createCSSFilesConfig(cssFiles);
   const esModulesConfig = createEsModulesConfig(entryPoints);
-  const bundleConfig = createBundleConfig(namespace);
+  const bundleConfig = bundle ? createBundleConfig(namespace) : null;
   return [...cssFilesConfig, ...esModulesConfig, bundleConfig].filter(x => x);
 };

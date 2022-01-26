@@ -19,17 +19,20 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-base.min.js",
-  "files": [
-    "dist",
-    "lib/**/*.d.ts",
-    "lib/**/*.js"
-  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "directories": {
+    "dist": "./dist"
+  },
   "dependencies": {
     "lit": "^2.0.0"
   },
   "scripts": {
     "build": "tsc --build --force && rollup -c rollup.config.js",
-    "clean": "tsc --build --clean && rimraf dist lib/*.js lib/**/*.js"
+    "clean": "tsc --build --clean && rimraf dist"
   },
   "publishConfig": {
     "access": "public"
