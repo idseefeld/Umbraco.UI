@@ -31,6 +31,95 @@ module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
     return capitalized;
   });
 
+  plop.setGenerator('new-format', {
+    description: 'Migrate components to new format',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message:
+          'UUI element name (i.e. color-area). uui- prefix will be added automatically',
+        validate: answer => {
+          if (answer.length < 1) {
+            return "There is no way we're moving forward without a name for your component.";
+          } else return true;
+        },
+        // Convert the input into kebab case if not provided as such and strip prefix
+        filter: response => kebabCase(response.replace(/^uui-/, '')),
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: './packages/{{> tagnamePartial }}/define/index.js',
+        templateFile: './templates/plop-templates/define.js.hbs',
+        force: true,
+      },
+      {
+        type: 'add',
+        path: './packages/{{> tagnamePartial }}/lib/index.ts',
+        templateFile: './templates/plop-templates/index.ts.hbs',
+        force: true,
+      },
+      {
+        type: 'modify',
+        path: './packages/{{> tagnamePartial }}/lib/{{> tagnamePartial }}.test.ts',
+        pattern: /import '\.';/,
+        template: "import '../define';",
+      },
+      {
+        type: 'modify',
+        path: './packages/{{> tagnamePartial }}/lib/{{> tagnamePartial }}.story.ts',
+        pattern: /\/lib';/,
+        template: "/define';",
+      },
+      {
+        type: 'add',
+        path: './packages/{{> tagnamePartial }}/rollup.config.js',
+        templateFile: './templates/plop-templates/rollup.config.hbs',
+        force: true,
+      },
+      {
+        type: 'modify',
+        path: './packages/{{> tagnamePartial }}/package.json',
+        pattern: /\.\/lib\/index.js/,
+        template: './dist/index.js',
+      },
+      {
+        type: 'modify',
+        path: './packages/{{> tagnamePartial }}/package.json',
+        pattern: /"files": \[.*\],/s,
+        template: '"files": ["custom-elements.json"],',
+      },
+      {
+        type: 'modify',
+        path: './packages/{{> tagnamePartial }}/package.json',
+        pattern: /"clean":.*$/m,
+        template:
+          '"clean": "tsc --build --clean && rimraf dist custom-elements.json",',
+      },
+      {
+        type: 'append',
+        path: './packages/{{> tagnamePartial }}/package.json',
+        pattern: /"module":.*$/m,
+        template: '"type": "module",',
+      },
+      {
+        type: 'append',
+        path: './packages/{{> tagnamePartial }}/package.json',
+        pattern: /"module":.*$/m,
+        template: '"types": "./dist/index.d.ts",',
+      },
+      {
+        type: 'append',
+        path: './packages/{{> tagnamePartial }}/package.json',
+        pattern: /"customElements":.*$/m,
+        template:
+          '"directories": {"dist": "./dist", "define": "./define"},\n"exports": {".": "./dist/index.js", "./define": "./define/index.js"},\n',
+      },
+    ],
+  });
+
   plop.setGenerator('component', {
     description: 'application controller logic',
     prompts: [
