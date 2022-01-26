@@ -21,9 +21,17 @@
   },
   "main": "./dist/{{> tagnamePartial }}.min.js",
   "module": "./lib/index.js",
+  "type": "module",
   "customElements": "custom-elements.json",
+  "exports": {
+    ".": "./lib/index.js",
+    "./define": "./define/index.js"
+  },
+  "directories": {
+    "dist": "./dist",
+    "define": "./define"
+  },
   "files": [
-    "dist",
     "lib/**/*.d.ts",
     "lib/**/*.js",
     "custom-elements.json"
