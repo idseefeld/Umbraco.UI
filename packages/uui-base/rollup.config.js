@@ -8,5 +8,6 @@ export default UUIProdConfig({
     'mixins/index',
     'types/index',
     'registration/index',
+    'utils/index',
   ],
 });

@@ -32,7 +32,7 @@
     "test:watch": "web-test-runner --node-resolve --watch",
     "dev": "npm run clean && npm run storybook",
     "build": "lerna run --scope @umbraco-ui/uui-css build && lerna run build",
-    "build:prod": "npm run clean && npm run lint && npm run build && npm run test",
+    "build:prod": "npm run clean && npm run build && npm run test",
     "clean": "lerna run clean",
     "lerna:publish": "npm run build:prod && npm whoami && lerna publish from-package --yes && npm run lerna-fix",
     "lerna:version": "lerna version --exact && rimraf package-lock.json && npm i",
@@ -41,14 +41,15 @@
     "lerna:modify-package": "lerna exec -- node ../../scripts/modify-pkgjson.mjs",
     "postinstall": "npm run bootstrap",
     "bootstrap": "lerna run --scope @umbraco-ui/uui-css build && node ./scripts/generate-ts-config.js",
-    "prepare": "husky install && echo 'PATH=$PATH:'$PATH >> .husky/_/husky.sh",
+    "prepare": "husky install",
     "new-package": "plop && npm i",
     "pack-all": "npm run build:prod && node ./scripts/pack-packages.js",
-    "pack-all-no-build": "node ./scripts/pack-packages.js"
+    "pack-all-no-build": "node ./scripts/pack-packages.js",
+    "pack": "node ./scripts/pack-package.js"
   },
   "engines": {
     "node": ">=16.0.0",
-    "npm": ">= 7.21.0"
+    "npm": ">=7.21.0"
   },
   "dependencies": {
     "lit": "^2.1.1"
@@ -57,11 +58,11 @@
     "@babel/core": "7.15.0",
     "@open-wc/testing": "2.5.33",
     "@rollup/plugin-node-resolve": "13.0.5",
-    "@storybook/addon-a11y": "6.4.8",
-    "@storybook/addon-actions": "6.4.8",
-    "@storybook/addon-essentials": "6.4.8",
-    "@storybook/addon-links": "6.4.8",
-    "@storybook/web-components": "6.4.8",
+    "@storybook/addon-a11y": "6.4.14",
+    "@storybook/addon-actions": "6.4.14",
+    "@storybook/addon-essentials": "6.4.14",
+    "@storybook/addon-links": "6.4.14",
+    "@storybook/web-components": "6.4.14",
     "@types/chai": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "5.7.0",
@@ -77,7 +78,7 @@
     "eslint-plugin-import": "2.24.2",
     "eslint-plugin-lit": "1.5.1",
     "eslint-plugin-lit-a11y": "1.1.0-next.1",
-    "husky": "7.0.0",
+    "husky": "7.0.4",
     "lerna": "4.0.0",
     "lint-staged": "10.5.4",
     "plop": "2.7.6",

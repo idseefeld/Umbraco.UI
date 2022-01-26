@@ -7,8 +7,8 @@
     "rootDir": "./lib",
     "composite": true
   },
-  "include": ["./**/*.ts"],
-  "exclude": ["./**/*.test.ts", "./**/*.story.ts"],
+  "include": ["./lib/**/*.ts"],
+  "exclude": ["./lib/**/*.test.ts", "./lib/**/*.story.ts"],
   "references": [
     {
       "path": "../uui-action-bar"
@@ -171,6 +171,15 @@
     },
     {
       "path": "../uui-toggle"
+    },
+    {
+      "path": "../uui-toast-notification"
+    },
+    {
+      "path": "../uui-toast-notification-container"
+    },
+    {
+      "path": "../uui-toast-notification-layout"
     }
   ]
 }

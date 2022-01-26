@@ -21,6 +21,7 @@
 /packages/**/lib/**/*.js
 /packages/**/lib/**/*.js.map
 /packages/**/lib/**/*.d.ts
+/packages/**/lib/**/*.d.ts.map
 tsconfig.tsbuildinfo
 /out-tsc/
 /packages/**/node_modules/
@@ -35,4 +36,6 @@ out-css
 *.log
 .eslintcache
 *.tgz
-*.d.ts.map
+
+# old source
+/src/**/*
