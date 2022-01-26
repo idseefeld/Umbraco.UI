@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { kebabCase } = require('lodash');
 
-module.exports = function (plop) {
+module.exports = function (/** @type {import('plop').NodePlopAPI} */ plop) {
   // name of custom element tag
   plop.setPartial('tagnamePartial', 'uui-{{name}}');
+
   // name of LitElement class
   plop.setHelper('className', function (name) {
     const camel = name.replace(/-([a-z])/g, g => {
@@ -12,11 +14,13 @@ module.exports = function (plop) {
     const capitalized = camel.charAt(0).toUpperCase() + camel.substring(1);
     return `UUI${capitalized}Element`;
   });
+
   // uui-base version
   plop.setHelper('uuiBaseVersion', function () {
     const basePackageJson = require('./packages/uui-base/package.json');
-    return basePackageJson.version;
+    return basePackageJson.version ?? '0.0.0';
   });
+
   // name used as title in storybook and documentation
   plop.setHelper('displayName', function (name) {
     const camel = name.replace(/-([a-z])/g, g => {
@@ -26,6 +30,7 @@ module.exports = function (plop) {
     const capitalized = camel.charAt(0).toUpperCase() + camel.substring(1);
     return capitalized;
   });
+
   plop.setGenerator('component', {
     description: 'application controller logic',
     prompts: [
@@ -48,6 +53,11 @@ module.exports = function (plop) {
         type: 'add',
         path: './packages/{{> tagnamePartial }}/lib/index.ts',
         templateFile: './templates/plop-templates/index.ts.hbs',
+      },
+      {
+        type: 'add',
+        path: './packages/{{> tagnamePartial }}/define/index.js',
+        templateFile: './templates/plop-templates/define.js.hbs',
       },
       {
         type: 'add',
