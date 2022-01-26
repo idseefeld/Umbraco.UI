@@ -1,6 +1,6 @@
-import '@umbraco-ui/uui-action-bar';
+import '@umbraco-ui/uui-action-bar/define';
 import '@umbraco-ui/uui-avatar-group/lib';
-import '@umbraco-ui/uui-avatar/lib';
+import '@umbraco-ui/uui-avatar/define';
 import '@umbraco-ui/uui-badge/lib';
 import '@umbraco-ui/uui-box/lib';
 import '@umbraco-ui/uui-breadcrumbs/lib';

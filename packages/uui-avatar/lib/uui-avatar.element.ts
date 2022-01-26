@@ -1,5 +1,5 @@
+import { css, html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { LitElement, html, css } from 'lit';
 
 /**
  *  Avatar for displaying users

@@ -1,4 +1,4 @@
-import '@umbraco-ui/uui-avatar/lib';
+import '@umbraco-ui/uui-avatar/define';
 import '@umbraco-ui/uui-box/lib';
 import '@umbraco-ui/uui-button/define';
 import '@umbraco-ui/uui-icon/lib';
