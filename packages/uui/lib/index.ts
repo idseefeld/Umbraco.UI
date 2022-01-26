@@ -1,4 +1,4 @@
-import '@umbraco-ui/uui-action-bar/lib';
+import '@umbraco-ui/uui-action-bar';
 import '@umbraco-ui/uui-avatar-group/lib';
 import '@umbraco-ui/uui-avatar/lib';
 import '@umbraco-ui/uui-badge/lib';

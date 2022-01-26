@@ -20,12 +20,18 @@
     "url": "https://github.com/umbraco/Umbraco.UI/issues"
   },
   "main": "./dist/uui-action-bar.min.js",
-  "module": "./lib/index.js",
+  "module": "./dist/index.js",
+  "type": "module",
   "customElements": "custom-elements.json",
+  "directories": {
+    "dist": "./dist",
+    "define": "./define"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./define": "./define/index.js"
+  },
   "files": [
-    "dist",
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
     "custom-elements.json"
   ],
   "dependencies": {

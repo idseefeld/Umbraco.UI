@@ -1,6 +1,6 @@
 import { html, fixture, expect } from '@open-wc/testing';
 import { UUIActionBarElement } from './uui-action-bar.element';
-import '.';
+import '../define';
 
 describe('UUIActionBarElement', () => {
   let element: UUIActionBarElement;

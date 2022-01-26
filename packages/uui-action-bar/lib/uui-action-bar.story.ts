@@ -1,4 +1,4 @@
-import '@umbraco-ui/uui-action-bar/lib';
+import '@umbraco-ui/uui-action-bar/define';
 import '@umbraco-ui/uui-button/define';
 import '@umbraco-ui/uui-icon/lib';
 
