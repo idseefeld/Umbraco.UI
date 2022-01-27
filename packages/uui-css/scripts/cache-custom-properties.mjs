@@ -1,6 +1,6 @@
-import postcss from 'postcss';
 import * as fs from 'fs/promises';
 import path from 'path';
+import postcss from 'postcss';
 import postcssCustomProperties from 'postcss-custom-properties';
 import * as postCssValueParser from 'postcss-values-parser';
 
@@ -48,7 +48,7 @@ export const CacheCustomProperties = async masterCSSPath => {
     // Second file for ESM, TODO: fix so we can use the same file in both cases.
     try {
       await fs.writeFile(
-        './custom-properties.module.js',
+        './custom-properties.js',
         `export default ${json};`,
         'utf8'
       );

@@ -10,10 +10,10 @@ import importCss from 'rollup-plugin-import-css';
 
 // @ts-ignore-start
 // eslint-disable-next-line -- // @typescript-eslint/ban-ts-comment // @ts-ignore
-import properties from '../packages/uui-css/custom-properties.module.js'; // eslint-disable-line
+import properties from '../packages/uui-css/custom-properties'; // eslint-disable-line
 // @ts-ignore-end
 
-const esbulidOptions = { minify: true };
+const esbuildOptions = { minify: false };
 
 const createEsModulesConfig = (entryPoints = []) => {
   return [
@@ -72,7 +72,7 @@ const createBundleConfig = (bundle, namespace) => {
       importCss(),
       processLitCSSPlugin(),
       minifyHTML(),
-      esbuild(esbulidOptions),
+      esbuild(esbuildOptions),
     ],
   };
 };

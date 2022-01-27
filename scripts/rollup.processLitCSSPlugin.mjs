@@ -6,7 +6,7 @@ import postcssConfig from 'postcss-load-config';
 
 // @ts-ignore-start
 // eslint-disable-next-line -- // @typescript-eslint/ban-ts-comment // @ts-ignore
-import customProperties from '../packages/uui-css/custom-properties.module'; // eslint-disable-line
+import customProperties from '../packages/uui-css/custom-properties'; // eslint-disable-line
 // @ts-ignore-end
 
 const options = {
