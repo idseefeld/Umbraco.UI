@@ -24,10 +24,6 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "customElements": "custom-elements.json",
-  "exports": {
-    ".": "./lib/index.js",
-    "./define": "./define/index.js"
-  },
   "directories": {
     "dist": "dist",
     "define": "define"

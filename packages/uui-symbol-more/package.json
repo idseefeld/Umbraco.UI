@@ -21,13 +21,16 @@
   },
   "main": "./dist/uui-symbol-more.min.js",
   "module": "./dist/index.js",
-"types": "./dist/index.d.ts",
-"type": "module",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "customElements": "custom-elements.json",
-"directories": {"dist": "./dist", "define": "./define"},
-"exports": {".": "./dist/index.js", "./define": "./define/index.js"},
-
-  "files": ["custom-elements.json"],
+  "directories": {
+    "dist": "./dist",
+    "define": "./define"
+  },
+  "files": [
+    "custom-elements.json"
+  ],
   "dependencies": {
     "@umbraco-ui/uui-base": "0.0.14"
   },

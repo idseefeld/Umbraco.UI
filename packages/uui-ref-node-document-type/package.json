@@ -28,10 +28,6 @@
     "dist": "./dist",
     "define": "./define"
   },
-  "exports": {
-    ".": "./dist/index.js",
-    "./define": "./define/index.js"
-  },
   "files": [
     "custom-elements.json"
   ],
