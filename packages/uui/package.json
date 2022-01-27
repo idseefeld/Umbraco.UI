@@ -22,17 +22,13 @@
   "homepage": "https://uui.umbraco.com/",
   "main": "./dist/uui.min.js",
   "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "customElements": "custom-elements.json",
-  "exports": {
-    ".": "./dist/index.js"
-  },
   "directories": {
     "dist": "./dist"
   },
   "files": [
-    "lib/**/*.d.ts",
-    "lib/**/*.js",
     "custom-elements.json"
   ],
   "dependencies": {
